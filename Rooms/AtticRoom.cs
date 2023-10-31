@@ -2,6 +2,8 @@
 {
     internal class AtticRoom : Room
     {
+        internal static bool isKeyCollected;
+
         internal override string CreateDescription() =>
 @"Dans le grenier, il y fait noir et froid.
 Un coffre est verrouillé avec un code [????].
@@ -18,7 +20,7 @@ Tu peux revenir dans ta [chambre].
                     break;
                 case "2314":
                     Console.WriteLine("Le coffre s'ouvre et tu obiens une clé.");
-                    Game.isKeyCollected = true;
+                    isKeyCollected = true;
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

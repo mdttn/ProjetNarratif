@@ -18,13 +18,13 @@ Dans ton armoire, tu aperçois le [grenier]
                     Game.Transition<Bathroom>();
                     break;
                 case "porte":
-                    if (!Game.isKeyCollected)
+                    if (!AtticRoom.isKeyCollected)
                     {
                         Console.WriteLine("La porte est verrouillée.");
                     }
                     else
                     {
-                        Console.WriteLine("Tu sors de ta chambre.");
+                        Console.WriteLine("Tu ouvres la porte avec ta clé et tu sors de ta chambre.");
                         Game.Finish();
                     }
                     break;

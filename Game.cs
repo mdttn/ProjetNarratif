@@ -8,7 +8,6 @@ namespace ProjetNarratif
         Room currentRoom;
         internal bool IsGameOver() => isFinished;
         static bool isFinished;
-        static internal bool isKeyCollected;
         static string nextRoom = "";
 
         internal void Add(Room room)
