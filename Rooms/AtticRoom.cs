@@ -18,8 +18,8 @@ Tu peux revenir dans ta [chambre].
                     Console.WriteLine("Tu retournes dans ta chambre.");
                     Game.Transition<Bedroom>();
                     break;
-                case "2314":
-                    Console.WriteLine("Le coffre s'ouvre et tu obiens une clé.");
+                case "0832":
+                    Console.WriteLine("Le coffre s'ouvre et tu obtiens une clé.");
                     isKeyCollected = true;
                     break;
                 default:
