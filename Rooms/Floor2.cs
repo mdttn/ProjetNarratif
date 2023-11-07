@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 
 namespace ProjetNarratif.Rooms
 {
-    internal class Bathroom : Room
+    internal class Floor2 : Room
     {
         internal override string CreateDescription() =>
-@"Tu te regardes dans le miroir.
-Tu vois une [brosse] à cheveux à côté d'un lavabot.
-Tu peux revenir dans le [corridor].
+@"Tu es au deuxième étage.
+Devant toi, il y a 4 chambres.
+À ta droite, il y a un [escalier] menant au 1er étage.
+À ta gauche, il y a une toilette.
+Au sol, tu trouves un origami de fleur fait en papier déchiré d'un livre.
 ";
 
         internal override void ReceiveChoice(string choice)
         {
-            var objects = new List<string>();
-
             switch (choice)
             {
-                case "brosse":
-                    Console.WriteLine("Tu as pris la brosse à cheveux.");
-
-                    break;
-                case "corridor":
-                    Console.WriteLine("Tu retournes dans le corridor.");
+                case "escalier":
+                    Console.WriteLine("Tu descends des marches.");
                     Game.Transition<Floor1>();
                     break;
                 default:
