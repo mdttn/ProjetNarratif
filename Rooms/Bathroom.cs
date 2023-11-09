@@ -16,13 +16,13 @@ Tu peux revenir dans le [corridor].
 
         internal override void ReceiveChoice(string choice)
         {
-            var objects = new List<string>();
+            //var objects = new List<string>();
 
             switch (choice)
             {
                 case "brosse":
                     Console.WriteLine("Tu as pris la brosse à cheveux.");
-
+                    //objects.Add("brosse");
                     break;
                 case "corridor":
                     Console.WriteLine("Tu retournes dans le corridor.");

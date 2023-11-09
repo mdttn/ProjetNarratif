@@ -13,13 +13,16 @@ namespace ProjetNarratif.Rooms
 Devant toi, il y a 4 chambres.
 À ta droite, il y a un [escalier] menant au 1er étage.
 À ta gauche, il y a une toilette.
-Au sol, tu trouves un origami de fleur fait en papier déchiré d'un livre.
+Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
 ";
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
+                case "origami":
+                    Console.WriteLine("Tu as ramassé l'origami.");
+                    break;
                 case "escalier":
                     Console.WriteLine("Tu descends des marches.");
                     Game.Transition<Floor1>();

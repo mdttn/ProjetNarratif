@@ -13,7 +13,7 @@ namespace ProjetNarratif.Rooms
 Sur le long du mur devant toi et vers la gauche, il y a des tables de travail.
 À ta droite, il y a le comptoir pour emprunter des ouvrages.
 Au fond de la salle, il y a des fauteuils et des bean bags.
-Au sol, tu trouves un cahier d'exercices.
+Au sol, tu trouves un [cahier] d'exercices.
 Tu peux revenir dans le [corridor].
 ";
 
@@ -21,6 +21,9 @@ Tu peux revenir dans le [corridor].
         {
             switch (choice)
             {
+                case "cahier":
+                    Console.WriteLine("Tu as ramassé le cahier.");
+                    break;
                 case "corridor":
                     Console.WriteLine("Tu sors de la bibliothèque.");
                     Game.Transition<Floor1>();

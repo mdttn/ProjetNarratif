@@ -32,7 +32,7 @@ Derrière toi, il y a une [porte] menant vers l'extérieur.
                     Game.Transition<Room4>();
                     break;
                 case "escalier":
-                    Console.WriteLine("Tu montes des marches et tu vois un pinceau.");
+                    Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
                     Game.Transition<Floor2>();
                     break;
                 case "bibliothèque":
