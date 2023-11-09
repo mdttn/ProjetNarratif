@@ -11,7 +11,6 @@ game.Add(new Library());
 game.Add(new Bathroom());
 game.Add(new Floor2());
 game.Add(new Exit());
-game.Add(new Bathroom());
 
 while (!game.IsGameOver())
 {

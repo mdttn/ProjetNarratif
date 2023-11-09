@@ -9,6 +9,7 @@ namespace ProjetNarratif
         internal bool IsGameOver() => isFinished;
         static bool isFinished;
         static string nextRoom = "";
+        internal static int HP = 3;
 
         internal void Add(Room room)
         {
@@ -16,6 +17,24 @@ namespace ProjetNarratif
             if (currentRoom == null)
             {
                 currentRoom = room;
+            }
+        }
+
+        internal static void HPLoss()
+        {
+            HP--;
+            if (HP > 1)
+            {
+                Console.WriteLine($"Il te reste *{HP}* pts d'énergie.");
+            }
+            else if (HP == 1)
+            {
+                Console.WriteLine($"Il te reste *{HP}* pt d'énergie.");
+            }
+            else
+            {
+                Console.WriteLine("Tu es trop fatigué.e. pour continuer à chercher des objets perdus.");
+                Finish();
             }
         }
 
