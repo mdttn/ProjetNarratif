@@ -24,12 +24,24 @@ Tu peux revenir dans le [corridor].
                     Console.WriteLine("Tu l'as retrouvé!");
                     Console.WriteLine("Tu trouves une clé numérotée du chiffre 2.");
                     break;
+                case "brosse":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
+                case "origami":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
+                case "pinceau":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
                 case "corridor":
                     Console.WriteLine("Tu retournes dans le corridor.");
                     Game.Transition<Floor1>();
                     break;
                 default:
-                    Console.WriteLine("Ce n'est pas le sien.");
+                    Console.WriteLine("Commande invalide.");
                     break;
             }
         }

@@ -7,11 +7,11 @@
 Devant toi, il y a les chambres [1], [2], [3] et [4].
 À ta droite, il y a un [escalier] menant au 2e étage.
 À ta gauche, il y a la [bibliothèque] et une [toilette].
-Derrière toi, il y a une [porte] menant vers l'extérieur.
+Derrière toi, il y a une [porte] pour sortir du dortoir.
 ";
 //Tu as une liste d'objets perdus.
 
-        internal override void  ReceiveChoice(string choice)
+        internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
@@ -32,7 +32,7 @@ Derrière toi, il y a une [porte] menant vers l'extérieur.
                     Game.Transition<Room4>();
                     break;
                 case "escalier":
-                    Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
+                    Game.Pinceau();
                     Game.Transition<Floor2>();
                     break;
                 case "bibliothèque":

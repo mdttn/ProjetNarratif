@@ -8,11 +8,26 @@ namespace ProjetNarratif.Rooms
 {
     internal class Bathroom : Room
     {
-        internal override string CreateDescription() =>
+        internal bool brosse;
+
+        internal override string CreateDescription()
+        {
+            if (brosse)
+            {
+                return
+@"Tu te regardes dans le miroir.
+Tu peux revenir dans le [corridor].
+";
+            }
+            else
+            {
+                return
 @"Tu te regardes dans le miroir.
 Tu vois une [brosse] à cheveux à côté d'un lavabot.
 Tu peux revenir dans le [corridor].
 ";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
@@ -21,6 +36,7 @@ Tu peux revenir dans le [corridor].
             switch (choice)
             {
                 case "brosse":
+                    brosse = true;
                     Console.WriteLine("Tu as pris la brosse à cheveux.");
                     //objects.Add("brosse");
                     break;

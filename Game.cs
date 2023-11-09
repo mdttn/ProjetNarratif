@@ -10,6 +10,7 @@ namespace ProjetNarratif
         static bool isFinished;
         static string nextRoom = "";
         internal static int HP = 3;
+        internal static bool pinceau;
 
         internal void Add(Room room)
         {
@@ -35,6 +36,18 @@ namespace ProjetNarratif
             {
                 Console.WriteLine("Tu es trop fatigué.e. pour continuer à chercher des objets perdus.");
                 Finish();
+            }
+        }
+
+        internal static void Pinceau()
+        {
+            if (pinceau)
+            {
+                Console.WriteLine("Tu montes des marches.");
+            }
+            else
+            {
+                Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
             }
         }
 
