@@ -6,7 +6,7 @@
 @"Tu es au premier étage.
 Devant toi, il y a les chambres [1], [2], [3] et [4].
 À ta droite, il y a un [escalier] menant au 2e étage.
-À ta gauche, il y a la [bibliothèque] et une [toilette].
+À ta gauche, il y a la [biblio]thèque et une [toilette].
 Derrière toi, il y a une [porte] pour sortir du dortoir.
 ";
 //Tu as une liste d'objets perdus.
@@ -35,7 +35,7 @@ Derrière toi, il y a une [porte] pour sortir du dortoir.
                     Game.Pinceau();
                     Game.Transition<Floor2>();
                     break;
-                case "bibliothèque":
+                case "biblio":
                     Console.WriteLine("Tu rentres dans la biliothèque.");
                     Game.Transition<Library>();
                     break;

@@ -17,7 +17,7 @@ namespace ProjetNarratif.Rooms
                 return
 @"Tu es au deuxième étage.
 Devant toi, il y a 4 chambres.
-À ta droite, il y a un [escalier] menant au 1er étage.
+À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a une toilette.
 ";
             }
@@ -26,7 +26,7 @@ Devant toi, il y a 4 chambres.
                 return
 @"Tu es au deuxième étage.
 Devant toi, il y a 4 chambres.
-À ta droite, il y a un [escalier] menant au 1er étage.
+À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a une toilette.
 Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
 ";
@@ -45,7 +45,7 @@ Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
                     Game.pinceau = true;
                     Console.WriteLine("Tu as ramassé le pinceau.");
                     break;
-                case "escalier":
+                case "e":
                     Console.WriteLine("Tu descends des marches.");
                     Game.Transition<Floor1>();
                     break;

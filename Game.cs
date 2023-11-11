@@ -6,8 +6,10 @@ namespace ProjetNarratif
     {
         List<Room> rooms = new();
         Room currentRoom;
-        internal bool IsGameOver() => isFinished;
+        internal bool IsGameFinished() => isFinished;
+        internal bool IsGameOver() => isOver;
         static bool isFinished;
+        static bool isOver;
         static string nextRoom = "";
         internal static int HP = 3;
         internal static bool pinceau;
@@ -35,7 +37,7 @@ namespace ProjetNarratif
             else
             {
                 Console.WriteLine("Tu es trop fatigué.e. pour continuer à chercher des objets perdus.");
-                Finish();
+                GameOver();
             }
         }
 
@@ -62,6 +64,11 @@ namespace ProjetNarratif
         internal static void Transition<T>() where T : Room
         {
             nextRoom = typeof(T).Name;
+        }
+
+        internal static void GameOver()
+        {
+            isOver = true;
         }
 
         internal static void Finish()

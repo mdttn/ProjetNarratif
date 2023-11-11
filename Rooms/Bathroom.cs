@@ -16,7 +16,7 @@ namespace ProjetNarratif.Rooms
             {
                 return
 @"Tu te regardes dans le miroir.
-Tu peux revenir dans le [corridor].
+Tu peux revenir dans le [c]orridor.
 ";
             }
             else
@@ -24,7 +24,7 @@ Tu peux revenir dans le [corridor].
                 return
 @"Tu te regardes dans le miroir.
 Tu vois une [brosse] à cheveux à côté d'un lavabot.
-Tu peux revenir dans le [corridor].
+Tu peux revenir dans le [c]orridor.
 ";
             }
         }
@@ -40,7 +40,7 @@ Tu peux revenir dans le [corridor].
                     Console.WriteLine("Tu as pris la brosse à cheveux.");
                     //objects.Add("brosse");
                     break;
-                case "corridor":
+                case "c":
                     Console.WriteLine("Tu retournes dans le corridor.");
                     Game.Transition<Floor1>();
                     break;

@@ -6,7 +6,7 @@
 
         internal override string CreateDescription() =>
 @"La porte est verrouillée avec un code [????].
-Tu peux te retourner vers le reste de l'[étage].
+Tu peux te retourner vers le reste de l'[é]tage.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -17,7 +17,7 @@ Tu peux te retourner vers le reste de l'[étage].
                     Console.WriteLine("La porte s'ouvre et tu sors dehors.");
                     Game.Finish();
                     break;
-                case "étage":
+                case "é":
                     Console.WriteLine("Tu te retournes face aux chambres.");
                     Game.Transition<Floor1>();
                     break;

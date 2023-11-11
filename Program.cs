@@ -12,7 +12,7 @@ game.Add(new Bathroom());
 game.Add(new Floor2());
 game.Add(new Exit());
 
-while (!game.IsGameOver())
+while (!game.IsGameFinished() && !game.IsGameOver())
 {
     Console.WriteLine("---");
     Console.WriteLine(game.CurrentRoomDescription);
@@ -21,5 +21,14 @@ while (!game.IsGameOver())
     game.ReceiveChoice(choice);
 }
 
-Console.WriteLine("FIN");
+if (game.IsGameFinished())
+{
+    Console.WriteLine("\nFIN");
+}
+
+else if (game.IsGameOver())
+{
+    Console.WriteLine("\nGAME OVER");
+}
+
 Console.ReadKey();

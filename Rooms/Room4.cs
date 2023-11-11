@@ -9,11 +9,11 @@ namespace ProjetNarratif.Rooms
     internal class Room4 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre a les rideaux ouverts.
+@"La chambre a les [r]ideaux ouverts.
 Il y a une collection de figurines et de livres sur des étagères.
-Il y a des toiles de paysages naturels.
-L'élève qui réside dans cette chambre a perdu un objet qui lui appartient: [...].
-Tu peux revenir dans le [corridor].
+Des toiles de paysages naturels sont accrochées sur les murs.
+Igor a perdu un objet qui lui appartient: [...].
+Tu peux revenir dans le [c]orridor.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -36,7 +36,10 @@ Tu peux revenir dans le [corridor].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "corridor":
+                case "r":
+
+                    break;
+                case "c":
                     Console.WriteLine("Tu retournes dans le corridor.");
                     Game.Transition<Floor1>();
                     break;

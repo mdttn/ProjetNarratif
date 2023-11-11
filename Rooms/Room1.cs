@@ -4,10 +4,10 @@
     {
         internal override string CreateDescription() =>
 @"La chambre est en désordre.
-Il y a des toutous sur le lit.
-Les murs sont roses et il y a du maquillage sur le bureau.
-L'élève qui réside dans cette chambre a perdu un objet qui lui appartient: [...].
-Tu peux revenir dans le [corridor].
+Les murs sont roses.
+Il y a des toutous sur le [l]it et du maquillage sur le [b]ureau.
+Hélène a perdu un objet qui lui appartient: [...].
+Tu peux revenir dans le [c]orridor.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -30,7 +30,13 @@ Tu peux revenir dans le [corridor].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "corridor":
+                case "l":
+
+                    break;
+                case "b":
+
+                    break;
+                case "c":
                     Console.WriteLine("Tu retournes dans le corridor.");
                     Game.Transition<Floor1>();
                     break;
