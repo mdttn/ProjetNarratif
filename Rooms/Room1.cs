@@ -8,6 +8,8 @@ Les murs sont roses.
 Il y a des toutous sur le [l]it et du maquillage sur le [b]ureau.
 Hélène a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -15,6 +17,8 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "brosse":
+                    //Game.ObjectList[Game.ObjectCount] = Game.Found("brosse");
+                    //Game.ObjectCount--;
                     Console.WriteLine("Tu l'as retrouvé!");
                     Console.WriteLine("Tu trouves une clé numérotée du chiffre 8.");
                     break;
@@ -35,6 +39,13 @@ Tu peux revenir dans le [c]orridor.
                     break;
                 case "b":
 
+                    break;
+                case "liste":
+                    Console.WriteLine("Liste d'objets perdus:");
+                    for (int i = 0; i < Game.ObjectCount; i++)
+                    {
+                        Console.WriteLine("- " + Game.ObjectList[i]);
+                    }
                     break;
                 case "c":
                     Console.WriteLine("Tu retournes dans le corridor.");

@@ -13,6 +13,8 @@ namespace ProjetNarratif
         static string nextRoom = "";
         internal static int HP = 3;
         internal static bool pinceau;
+        internal static string[] ObjectList = new string[10];
+        internal static int ObjectCount;
 
         internal void Add(Room room)
         {
@@ -41,10 +43,54 @@ namespace ProjetNarratif
             }
         }
 
+        internal static string Objects(string obj)
+        {
+            if (obj == "brosse")
+            {
+                obj = ("brosse").ToString();
+            }
+            if (obj == "origami")
+            {
+                obj = ("origami").ToString();
+            }
+            if (obj == "cahier")
+            {
+                obj = ("cahier").ToString();
+            }
+            if (obj == "pinceau")
+            {
+                obj = ("pinceau").ToString();
+            }
+            return obj;
+        }
+
+        //internal static string Found(string found)
+        //{
+        //    if (found == "brosse")
+        //    {
+        //        found = ("").ToString();
+        //    }
+        //    if (found == "origami")
+        //    {
+        //        found = ("").ToString();
+        //    }
+        //    if (found == "cahier")
+        //    {
+        //        found = ("").ToString();
+        //    }
+        //    if (found == "pinceau")
+        //    {
+        //        found = ("").ToString();
+        //    }
+        //    return found;
+        //}
+
         internal static void Pinceau()
         {
             if (pinceau)
             {
+                ObjectList[ObjectCount] = Objects("pinceau");
+                ObjectCount++;
                 Console.WriteLine("Tu montes des marches.");
             }
             else
@@ -84,6 +130,7 @@ namespace ProjetNarratif
                 {
                     nextRoom = "";
                     currentRoom = room;
+                    Console.WriteLine("---");
                     break;
                 }
             }

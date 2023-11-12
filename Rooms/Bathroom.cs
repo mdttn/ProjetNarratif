@@ -15,14 +15,14 @@ namespace ProjetNarratif.Rooms
             if (brosse)
             {
                 return
-@"Tu te regardes dans le miroir.
+@"Tu es devant le [m]iroir.
 Tu peux revenir dans le [c]orridor.
 ";
             }
             else
             {
                 return
-@"Tu te regardes dans le miroir.
+@"Tu es devant le [m]iroir.
 Tu vois une [brosse] à cheveux à côté d'un lavabot.
 Tu peux revenir dans le [c]orridor.
 ";
@@ -31,14 +31,16 @@ Tu peux revenir dans le [c]orridor.
 
         internal override void ReceiveChoice(string choice)
         {
-            //var objects = new List<string>();
-
             switch (choice)
             {
                 case "brosse":
                     brosse = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Objects("brosse");
+                    Game.ObjectCount++;
                     Console.WriteLine("Tu as pris la brosse à cheveux.");
-                    //objects.Add("brosse");
+                    break;
+                case "m":
+
                     break;
                 case "c":
                     Console.WriteLine("Tu retournes dans le corridor.");

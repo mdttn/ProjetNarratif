@@ -19,6 +19,8 @@ namespace ProjetNarratif.Rooms
 Devant toi, il y a 4 chambres.
 À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a une toilette.
+
+Tu as a une [liste] d'objets perdus que tu as ramassés.
 ";
             }
             else
@@ -29,6 +31,8 @@ Devant toi, il y a 4 chambres.
 À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a une toilette.
 Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
+
+Tu as a une [liste] d'objets perdus que tu as ramassés.
 ";
             }
         }
@@ -39,15 +43,29 @@ Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
             {
                 case "origami":
                     origami = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Objects("origami");
+                    Game.ObjectCount++;
                     Console.WriteLine("Tu as ramassé l'origami.");
                     break;
                 case "pinceau":
                     Game.pinceau = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Objects("pinceau");
+                    Game.ObjectCount++;
                     Console.WriteLine("Tu as ramassé le pinceau.");
                     break;
                 case "e":
                     Console.WriteLine("Tu descends des marches.");
                     Game.Transition<Floor1>();
+                    break;
+                //case "t":
+
+                //    break;
+                case "liste":
+                    Console.WriteLine("Liste d'objets perdus:");
+                    for (int i = 0; i < Game.ObjectCount; i++)
+                    {
+                        Console.WriteLine("- " + Game.ObjectList[i]);
+                    }
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

@@ -4,52 +4,57 @@
     {
         internal override string CreateDescription() =>
 @"Tu es au premier étage.
-Devant toi, il y a les chambres [1], [2], [3] et [4].
-À ta droite, il y a un [escalier] menant au 2e étage.
-À ta gauche, il y a la [biblio]thèque et une [toilette].
-Derrière toi, il y a une [porte] pour sortir du dortoir.
+Devant toi, il y a les chambres [11], [12], [13] et [14].
+À ta droite, il y a un [e]scalier menant au 2e étage.
+À ta gauche, il y a la [b]ibliothèque et une [t]oilette.
+Derrière toi, il y a une [p]orte pour sortir du dortoir.
+
+Tu as a une [liste] d'objets perdus que tu as ramassés.
 ";
-//Tu as une liste d'objets perdus.
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
-                case "1":
+                case "11":
                     Console.WriteLine("Tu entres dans la première chambre.");
                     Game.Transition<Room1>();
                     break;
-                case "2":
+                case "12":
                     Console.WriteLine("Tu entres dans la deuxième chambre.");
                     Game.Transition<Room2>();
                     break;
-                case "3":
+                case "13":
                     Console.WriteLine("Tu entres dans la troisième chambre");
                     Game.Transition<Room3>();
                     break;
-                case "4":
+                case "14":
                     Console.WriteLine("Tu entres dans la quatrième chambre");
                     Game.Transition<Room4>();
                     break;
-                case "escalier":
+                case "e":
                     Game.Pinceau();
                     Game.Transition<Floor2>();
                     break;
-                case "biblio":
+                case "b":
                     Console.WriteLine("Tu rentres dans la biliothèque.");
                     Game.Transition<Library>();
                     break;
-                case "toilette":
+                case "t":
                     Console.WriteLine("Tu entres dans la toilette.");
                     Game.Transition<Bathroom>();
                     break;
-                case "porte":
+                case "p":
                     Console.WriteLine("Tu te tournes vers la porte.");
                     Game.Transition<Exit>();
                     break;
-                //case "liste":
-                //    Console.WriteLine("Liste d'objets perdus:\n");
-                //    break;
+                case "liste":
+                    Console.WriteLine("Liste d'objets perdus:");
+                    for (int i = 0; i < Game.ObjectCount; i++)
+                    {
+                        Console.WriteLine("- " + Game.ObjectList[i]);
+                    }
+                    break;
                 default:
                     Console.WriteLine("Commande invalide.");
                     break;

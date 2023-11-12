@@ -23,7 +23,7 @@ while (!game.IsGameFinished() && !game.IsGameOver())
 
 if (game.IsGameFinished())
 {
-    Console.WriteLine("\nFIN");
+    Console.WriteLine("\nTHE END");
 }
 
 else if (game.IsGameOver())
