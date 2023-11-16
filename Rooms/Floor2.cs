@@ -8,11 +8,9 @@ namespace ProjetNarratif.Rooms
 {
     internal class Floor2 : Room
     {
-        internal bool origami;
-
         internal override string CreateDescription()
         {
-            if (origami)
+            if (Game.origami)
             {
                 return
 @"Tu es au deuxième étage.
@@ -42,14 +40,14 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "origami":
-                    origami = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Objects("origami");
+                    Game.origami = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Origami(true);
                     Game.ObjectCount++;
                     Console.WriteLine("Tu as ramassé l'origami.");
                     break;
                 case "pinceau":
                     Game.pinceau = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Objects("pinceau");
+                    Game.ObjectList[Game.ObjectCount] = Game.Pinceau(true);
                     Game.ObjectCount++;
                     Console.WriteLine("Tu as ramassé le pinceau.");
                     break;

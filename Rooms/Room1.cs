@@ -17,8 +17,8 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "brosse":
-                    //Game.ObjectList[Game.ObjectCount] = Game.Found("brosse");
-                    //Game.ObjectCount--;
+                    Game.ObjectList[Game.ObjectCount] = Game.Brosse(false);
+                    Game.ObjectCount--;
                     Console.WriteLine("Tu l'as retrouvé!");
                     Console.WriteLine("Tu trouves une clé numérotée du chiffre 8.");
                     break;

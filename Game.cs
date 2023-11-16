@@ -12,7 +12,7 @@ namespace ProjetNarratif
         static bool isOver;
         static string nextRoom = "";
         internal static int HP = 3;
-        internal static bool pinceau;
+        internal static bool brosse, origami, cahier, pinceau;
         internal static string[] ObjectList = new string[10];
         internal static int ObjectCount;
 
@@ -38,58 +38,76 @@ namespace ProjetNarratif
             }
             else
             {
-                Console.WriteLine("Tu es trop fatigué.e. pour continuer à chercher des objets perdus.");
+                Console.WriteLine("Tu es trop fatigué.e pour continuer à chercher des objets perdus.");
                 GameOver();
             }
         }
 
-        internal static string Objects(string obj)
+        internal static string Brosse(bool room)
         {
-            if (obj == "brosse")
+            string obj;
+
+            if (room == false)
+            {
+                obj = ("").ToString();
+            }
+            else
             {
                 obj = ("brosse").ToString();
             }
-            if (obj == "origami")
+            return obj;
+        }
+
+        internal static string Origami(bool room)
+        {
+            string obj;
+
+            if (room == false)
+            {
+                obj = ("").ToString();
+            }
+            else
             {
                 obj = ("origami").ToString();
             }
-            if (obj == "cahier")
+            return obj;
+        }
+
+        internal static string Cahier(bool room)
+        {
+            string obj;
+
+            if (room == false)
+            {
+                obj = ("").ToString();
+            }
+            else
             {
                 obj = ("cahier").ToString();
             }
-            if (obj == "pinceau")
+            return obj;
+        }
+
+        internal static string Pinceau(bool room)
+        {
+            string obj;
+
+            if (room == false)
+            {
+                obj = ("").ToString();
+            }
+            else
             {
                 obj = ("pinceau").ToString();
             }
             return obj;
         }
 
-        //internal static string Found(string found)
-        //{
-        //    if (found == "brosse")
-        //    {
-        //        found = ("").ToString();
-        //    }
-        //    if (found == "origami")
-        //    {
-        //        found = ("").ToString();
-        //    }
-        //    if (found == "cahier")
-        //    {
-        //        found = ("").ToString();
-        //    }
-        //    if (found == "pinceau")
-        //    {
-        //        found = ("").ToString();
-        //    }
-        //    return found;
-        //}
-
         internal static void Pinceau()
         {
             if (pinceau)
             {
-                ObjectList[ObjectCount] = Objects("pinceau");
+                ObjectList[ObjectCount] = Pinceau(true);
                 ObjectCount++;
                 Console.WriteLine("Tu montes des marches.");
             }

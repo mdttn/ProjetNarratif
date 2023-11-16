@@ -8,11 +8,9 @@ namespace ProjetNarratif.Rooms
 {
     internal class Bathroom : Room
     {
-        internal bool brosse;
-
         internal override string CreateDescription()
         {
-            if (brosse)
+            if (Game.brosse)
             {
                 return
 @"Tu es devant le [m]iroir.
@@ -34,8 +32,8 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "brosse":
-                    brosse = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Objects("brosse");
+                    Game.brosse = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Brosse(true);
                     Game.ObjectCount++;
                     Console.WriteLine("Tu as pris la brosse à cheveux.");
                     break;

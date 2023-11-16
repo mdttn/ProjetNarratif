@@ -8,11 +8,9 @@ namespace ProjetNarratif.Rooms
 {
     internal class Library : Room
     {
-        internal bool cahier;
-
         internal override string CreateDescription()
         {
-            if (cahier)
+            if (Game.cahier)
             {
                 return
 @"Le silence règne dans la bibliothèque remplie d'étagères de livres et de manuels.
@@ -40,8 +38,8 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "cahier":
-                    cahier = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Objects("brosse");
+                    Game.cahier = true;
+                    Game.ObjectList[Game.ObjectCount] = Game.Cahier(true);
                     Game.ObjectCount++;
                     Console.WriteLine("Tu as ramassé le cahier.");
                     break;
