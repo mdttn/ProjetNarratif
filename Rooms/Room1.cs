@@ -17,10 +17,12 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "brosse":
-                    Game.ObjectList[Game.ObjectCount] = Game.Brosse(false);
-                    Game.ObjectCount--;
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 8.");
+                    if (Game.inventory.Contains("brosse"))
+                    {
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 8.");
+                        Game.inventory.Remove("brosse");
+                    }
                     break;
                 case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");

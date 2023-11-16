@@ -32,10 +32,16 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "brosse":
-                    Game.brosse = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Brosse(true);
-                    Game.ObjectCount++;
-                    Console.WriteLine("Tu as pris la brosse à cheveux.");
+                    if (!Game.brosse)
+                    {
+                        Game.brosse = true;
+                        Game.inventory.Add("brosse");
+                        Console.WriteLine("Tu as pris la brosse à cheveux.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà pris la brosse à cheveux.");
+                    }
                     break;
                 case "m":
 

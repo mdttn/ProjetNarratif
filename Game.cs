@@ -14,6 +14,7 @@ namespace ProjetNarratif
         internal static int HP = 3;
         internal static bool brosse, origami, cahier, pinceau;
         internal static string[] ObjectList = new string[10];
+        internal static List<string> inventory = new List<string>();
         internal static int ObjectCount;
 
         internal void Add(Room room)

@@ -50,9 +50,9 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
-                    for (int i = 0; i < Game.ObjectCount; i++)
+                    foreach (var item in Game.inventory)
                     {
-                        Console.WriteLine("- " + Game.ObjectList[i]);
+                        Console.WriteLine("- " + item);
                     }
                     break;
                 default:

@@ -38,10 +38,16 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "cahier":
-                    Game.cahier = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Cahier(true);
-                    Game.ObjectCount++;
-                    Console.WriteLine("Tu as ramassé le cahier.");
+                    if (!Game.cahier)
+                    {
+                        Game.cahier = true;
+                        Game.inventory.Add("cahier");
+                        Console.WriteLine("Tu as ramassé le cahier.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà ramassé le cahier.");
+                    }
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
