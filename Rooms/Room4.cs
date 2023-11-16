@@ -23,10 +23,13 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "pinceau":
-                    Game.ObjectList[Game.ObjectCount] = Game.Pinceau(false);
-                    Game.ObjectCount--;
+                    if (Game.inventory.Contains("pinceau"))
+                    {
+                        Game.inventory.Remove("pinceau");
+                    }
                     Console.WriteLine("Tu l'as retrouvé!");
                     Console.WriteLine("Tu trouves une clé numérotée du chiffre 6.");
+                    Game.inventory.Add("Clé de la chambre 14: #6");
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
@@ -45,9 +48,9 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
-                    for (int i = 0; i < Game.ObjectCount; i++)
+                    foreach (var item in Game.inventory)
                     {
-                        Console.WriteLine("- " + Game.ObjectList[i]);
+                        Console.WriteLine("- " + item);
                     }
                     break;
                 case "c":

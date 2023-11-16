@@ -7,6 +7,8 @@
         internal override string CreateDescription() =>
 @"La porte est verrouillée avec un code [????].
 Tu peux te retourner vers le reste de l'[é]tage.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -20,6 +22,13 @@ Tu peux te retourner vers le reste de l'[é]tage.
                 case "é":
                     Console.WriteLine("Tu te retournes face aux chambres.");
                     Game.Transition<Floor1>();
+                    break;
+                case "liste":
+                    Console.WriteLine("Liste d'objets perdus:");
+                    foreach (var item in Game.inventory)
+                    {
+                        Console.WriteLine("- " + item);
+                    }
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

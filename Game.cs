@@ -13,9 +13,7 @@ namespace ProjetNarratif
         static string nextRoom = "";
         internal static int HP = 3;
         internal static bool brosse, origami, cahier, pinceau;
-        internal static string[] ObjectList = new string[10];
         internal static List<string> inventory = new List<string>();
-        internal static int ObjectCount;
 
         internal void Add(Room room)
         {
@@ -41,80 +39,6 @@ namespace ProjetNarratif
             {
                 Console.WriteLine("Tu es trop fatigué.e pour continuer à chercher des objets perdus.");
                 GameOver();
-            }
-        }
-
-        internal static string Brosse(bool room)
-        {
-            string obj;
-
-            if (room == false)
-            {
-                obj = ("").ToString();
-            }
-            else
-            {
-                obj = ("brosse").ToString();
-            }
-            return obj;
-        }
-
-        internal static string Origami(bool room)
-        {
-            string obj;
-
-            if (room == false)
-            {
-                obj = ("").ToString();
-            }
-            else
-            {
-                obj = ("origami").ToString();
-            }
-            return obj;
-        }
-
-        internal static string Cahier(bool room)
-        {
-            string obj;
-
-            if (room == false)
-            {
-                obj = ("").ToString();
-            }
-            else
-            {
-                obj = ("cahier").ToString();
-            }
-            return obj;
-        }
-
-        internal static string Pinceau(bool room)
-        {
-            string obj;
-
-            if (room == false)
-            {
-                obj = ("").ToString();
-            }
-            else
-            {
-                obj = ("pinceau").ToString();
-            }
-            return obj;
-        }
-
-        internal static void Pinceau()
-        {
-            if (pinceau)
-            {
-                ObjectList[ObjectCount] = Pinceau(true);
-                ObjectCount++;
-                Console.WriteLine("Tu montes des marches.");
-            }
-            else
-            {
-                Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
             }
         }
 
@@ -149,7 +73,6 @@ namespace ProjetNarratif
                 {
                     nextRoom = "";
                     currentRoom = room;
-                    Console.WriteLine("---");
                     break;
                 }
             }

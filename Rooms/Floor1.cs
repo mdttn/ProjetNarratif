@@ -33,7 +33,14 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     Game.Transition<Room4>();
                     break;
                 case "e":
-                    Game.Pinceau();
+                    if (Game.pinceau)
+                    {
+                        Console.WriteLine("Tu montes des marches.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
+                    }
                     Game.Transition<Floor2>();
                     break;
                 case "b":

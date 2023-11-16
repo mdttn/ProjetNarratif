@@ -51,9 +51,9 @@ Tu peux revenir dans le [c]orridor.
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
-                    for (int i = 0; i < Game.ObjectCount; i++)
+                    foreach (var item in Game.inventory)
                     {
-                        Console.WriteLine("- " + Game.ObjectList[i]);
+                        Console.WriteLine("- " + item);
                     }
                     break;
                 case "c":

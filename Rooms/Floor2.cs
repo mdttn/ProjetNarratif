@@ -27,7 +27,7 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
 @"Tu es au deuxième étage.
 Devant toi, il y a 4 chambres.
 À ta droite, il y a un [e]scalier menant au 1er étage.
-À ta gauche, il y a une toilette.
+À ta gauche, il y a une [t]oilette.
 Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
 
 Tu as a une [liste] d'objets perdus que tu as ramassés.
@@ -40,29 +40,41 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "origami":
-                    Game.origami = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Origami(true);
-                    Game.ObjectCount++;
-                    Console.WriteLine("Tu as ramassé l'origami.");
+                    if (!Game.origami)
+                    {
+                        Game.origami = true;
+                        Game.inventory.Add("origami");
+                        Console.WriteLine("Tu as ramassé l'origami.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà ramassé l'origami.");
+                    }
                     break;
                 case "pinceau":
-                    Game.pinceau = true;
-                    Game.ObjectList[Game.ObjectCount] = Game.Pinceau(true);
-                    Game.ObjectCount++;
-                    Console.WriteLine("Tu as ramassé le pinceau.");
+                    if (!Game.pinceau)
+                    {
+                        Game.pinceau = true;
+                        Game.inventory.Add("pinceau");
+                        Console.WriteLine("Tu as ramassé le pinceau.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà ramassé le pinceau.");
+                    }
                     break;
                 case "e":
                     Console.WriteLine("Tu descends des marches.");
                     Game.Transition<Floor1>();
                     break;
-                //case "t":
+                case "t":
 
-                //    break;
+                    break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
-                    for (int i = 0; i < Game.ObjectCount; i++)
+                    foreach (var item in Game.inventory)
                     {
-                        Console.WriteLine("- " + Game.ObjectList[i]);
+                        Console.WriteLine("- " + item);
                     }
                     break;
                 default:
