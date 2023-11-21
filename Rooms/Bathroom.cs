@@ -16,7 +16,8 @@ namespace ProjetNarratif.Rooms
 @"Tu es devant le [m]iroir.
 Tu peux revenir dans le [c]orridor.
 
-Tu as a une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
             }
             else
@@ -26,7 +27,8 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
 Tu vois une [brosse] à cheveux à côté d'un lavabot.
 Tu peux revenir dans le [c]orridor.
 
-Tu as a une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
             }
         }
@@ -55,6 +57,13 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
                     }
                     break;
                 case "c":

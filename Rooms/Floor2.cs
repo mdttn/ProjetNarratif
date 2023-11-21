@@ -18,7 +18,8 @@ Devant toi, il y a 4 chambres.
 À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a une toilette.
 
-Tu as a une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
             }
             else
@@ -30,7 +31,8 @@ Devant toi, il y a 4 chambres.
 À ta gauche, il y a une [t]oilette.
 Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
 
-Tu as a une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
             }
         }
@@ -75,6 +77,13 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
                     }
                     break;
                 default:

@@ -9,7 +9,8 @@ Devant toi, il y a les chambres [11], [12], [13] et [14].
 À ta gauche, il y a la [b]ibliothèque et une [t]oilette.
 Derrière toi, il y a une [p]orte pour sortir du dortoir.
 
-Tu as a une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -25,11 +26,11 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     Game.Transition<Room2>();
                     break;
                 case "13":
-                    Console.WriteLine("Tu entres dans la troisième chambre");
+                    Console.WriteLine("Tu entres dans la troisième chambre.");
                     Game.Transition<Room3>();
                     break;
                 case "14":
-                    Console.WriteLine("Tu entres dans la quatrième chambre");
+                    Console.WriteLine("Tu entres dans la quatrième chambre.");
                     Game.Transition<Room4>();
                     break;
                 case "e":
@@ -60,6 +61,13 @@ Tu as a une [liste] d'objets perdus que tu as ramassés.
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
                     }
                     break;
                 default:

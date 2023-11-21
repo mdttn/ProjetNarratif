@@ -16,6 +16,7 @@ Alain a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -29,7 +30,7 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
                     }
                     Console.WriteLine("Tu l'as retrouvé!");
                     Console.WriteLine("Tu trouves une clé numérotée du chiffre 2.");
-                    Game.inventory.Add("Clé de la chambre 13: #2");
+                    Game.box.Add("chambre 13: #2");
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
@@ -49,6 +50,13 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
                     }
                     break;
                 case "c":

@@ -9,6 +9,7 @@
 Tu peux te retourner vers le reste de l'[é]tage.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -16,7 +17,7 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
             switch (choice)
             {
                 case "8526":
-                    Console.WriteLine("La porte s'ouvre et tu sors dehors.");
+                    Console.WriteLine("La porte s'ouvre et tu sors.");
                     Game.Finish();
                     break;
                 case "é":
@@ -28,6 +29,13 @@ Tu as une [liste] d'objets perdus que tu as ramassés.
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
                     }
                     break;
                 default:
