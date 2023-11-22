@@ -5,8 +5,8 @@
         internal static bool isKeyCollected;
 
         internal override string CreateDescription() =>
-@"La porte est verrouillée avec un code [????].
-Tu peux te retourner vers le reste de l'[é]tage.
+@"La porte est verrouillée avec un code: [????].
+Tu peux te [r]etourner.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
@@ -20,7 +20,7 @@ Tu as une boîte de [clés].
                     Console.WriteLine("La porte s'ouvre et tu sors.");
                     Game.Finish();
                     break;
-                case "é":
+                case "r":
                     Console.WriteLine("Tu te retournes face aux chambres.");
                     Game.Transition<Floor1>();
                     break;

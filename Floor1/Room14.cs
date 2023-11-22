@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProjetNarratif.Rooms
 {
-    internal class Room3 : Room
+    internal class Room14 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre a des meubles à étagères remplies de livres.
-Il y a un jeu de fléchettes magnétiques accroché au mur et un échiquier sur une petite table.
-Il y a des lampes sur le [b]ureau et sur la [t]able de nuit.
-Alain a perdu un objet qui lui appartient: [...].
+@"La chambre a les [r]ideaux ouverts.
+Il y a une collection de figurines et de livres sur des étagères.
+Des toiles de paysages naturels sont accrochées sur les murs.
+Igor a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
@@ -23,14 +23,14 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "cahier":
-                    if (Game.inventory.Contains("cahier"))
+                case "pinceau":
+                    if (Game.inventory.Contains("pinceau"))
                     {
-                        Game.inventory.Remove("cahier");
+                        Game.inventory.Remove("pinceau");
                     }
                     Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 2.");
-                    Game.box.Add("chambre 13: #2");
+                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 6.");
+                    Game.box.Add("chambre 14: #6");
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
@@ -40,12 +40,18 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "pinceau":
+                case "cahier":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
+                case "r":
+
+                    break;
+                case "c":
+                    Console.WriteLine("Tu sors de la chambre 14.");
+                    Game.Transition<Floor1>();
+                    break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
                     Console.WriteLine("Liste d'objets perdus:");
                     foreach (var item in Game.inventory)
                     {
@@ -58,10 +64,6 @@ Tu as une boîte de [clés].
                     {
                         Console.WriteLine("- " + key);
                     }
-                    break;
-                case "c":
-                    Console.WriteLine("Tu retournes dans le corridor.");
-                    Game.Transition<Floor1>();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

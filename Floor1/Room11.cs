@@ -1,11 +1,11 @@
 ﻿namespace ProjetNarratif.Rooms
 {
-    internal class Room1 : Room
+    internal class Room11 : Room
     {
         internal override string CreateDescription() =>
 @"La chambre est en désordre.
 Les murs sont roses.
-Il y a des toutous sur le [l]it et du maquillage sur le [b]ureau.
+Il y a des toutous sur le lit et du maquillage sur le [b]ureau.
 Hélène a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -44,6 +44,10 @@ Tu as une boîte de [clés].
                 case "b":
 
                     break;
+                case "c":
+                    Console.WriteLine("Tu sors de la chambre 11.");
+                    Game.Transition<Floor1>();
+                    break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
                     foreach (var item in Game.inventory)
@@ -57,10 +61,6 @@ Tu as une boîte de [clés].
                     {
                         Console.WriteLine("- " + key);
                     }
-                    break;
-                case "c":
-                    Console.WriteLine("Tu retournes dans le corridor.");
-                    Game.Transition<Floor1>();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

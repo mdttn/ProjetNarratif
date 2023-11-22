@@ -1,13 +1,13 @@
 ﻿namespace ProjetNarratif.Rooms
 {
-    internal class Floor1 : Room
+    internal class Floor2 : Room
     {
         internal override string CreateDescription() =>
 @"Tu es au premier étage.
-Devant toi, il y a les chambres [11], [12], [13] et [14].
-À ta droite, il y a un [e]scalier menant au 2e étage.
-À ta gauche, il y a la [b]ibliothèque et une [t]oilette.
-Derrière toi, il y a une [p]orte pour sortir du dortoir.
+Devant toi, il y a les chambres [21], [22], [23] et [24].
+À ta droite, il y a un [e]scalier menant au 1er étage.
+À ta gauche, il y a la [b]ibliothèque et une toilette.
+Derrière toi, il y a des fenêtres.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
@@ -17,44 +17,29 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "11":
+                case "21":
                     Console.WriteLine("Tu entres dans la première chambre.");
-                    Game.Transition<Room1>();
+                    //Game.Transition<Room21>();
                     break;
-                case "12":
+                case "22":
                     Console.WriteLine("Tu entres dans la deuxième chambre.");
-                    Game.Transition<Room2>();
+                    //Game.Transition<Room22>();
                     break;
-                case "13":
+                case "23":
                     Console.WriteLine("Tu entres dans la troisième chambre.");
-                    Game.Transition<Room3>();
+                    //Game.Transition<Room23>();
                     break;
-                case "14":
+                case "24":
                     Console.WriteLine("Tu entres dans la quatrième chambre.");
-                    Game.Transition<Room4>();
+                    //Game.Transition<Room24>();
                     break;
                 case "e":
-                    if (Game.pinceau)
-                    {
-                        Console.WriteLine("Tu montes des marches.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Tu montes des marches et tu trouves un [pinceau].");
-                    }
-                    Game.Transition<Floor2>();
+                    Console.WriteLine("Tu descends des marches.");
+                    Game.Transition<Floor1>();
                     break;
                 case "b":
-                    Console.WriteLine("Tu rentres dans la biliothèque.");
+                    Console.WriteLine("Tu entres dans la bibliothèque.");
                     Game.Transition<Library>();
-                    break;
-                case "t":
-                    Console.WriteLine("Tu entres dans la toilette.");
-                    Game.Transition<Bathroom>();
-                    break;
-                case "p":
-                    Console.WriteLine("Tu te tournes vers la porte.");
-                    Game.Transition<Exit>();
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");

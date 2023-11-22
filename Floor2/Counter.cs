@@ -10,6 +10,10 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription() =>
 @"Scanne le type d'ouvrage que tu veux emprunter: [...]
+Tu peux [r]evenir.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ---";
 
         internal override void ReceiveChoice(string choice)
@@ -45,6 +49,24 @@ namespace ProjetNarratif.Rooms
                     break;
                 case "cahier":
                     Console.WriteLine("Le cahier n'appartient pas à la bibliothèque.");
+                    break;
+                case "r":
+                    Console.WriteLine("Tu libères le comptoir.");
+                    Game.Transition<Library>();
+                    break;
+                case "liste":
+                    Console.WriteLine("Liste d'objets perdus:");
+                    foreach (var item in Game.inventory)
+                    {
+                        Console.WriteLine("- " + item);
+                    }
+                    break;
+                case "clés":
+                    Console.WriteLine("Boîte de clés:");
+                    foreach (var key in Game.box)
+                    {
+                        Console.WriteLine("- " + key);
+                    }
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

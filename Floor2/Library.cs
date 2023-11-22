@@ -50,6 +50,10 @@ Tu as une boîte de [clés].
                         Console.WriteLine("Tu vas au fond de la bibliothèque et tu te reposes sur le bean bag pendant un moment.");
                     }
                     break;
+                case "c":
+                    Console.WriteLine("Tu sors de la bibliothèque.");
+                    Game.Transition<Floor1>();
+                    break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
                     foreach (var item in Game.inventory)
@@ -63,10 +67,6 @@ Tu as une boîte de [clés].
                     {
                         Console.WriteLine("- " + key);
                     }
-                    break;
-                case "c":
-                    Console.WriteLine("Tu sors de la bibliothèque.");
-                    Game.Transition<Floor1>();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");
