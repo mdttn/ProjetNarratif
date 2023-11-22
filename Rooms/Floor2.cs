@@ -20,7 +20,7 @@ Devant toi, il y a 4 chambres.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
-";
+---";
             }
             else
             {
@@ -33,7 +33,7 @@ Au sol, tu trouves un [origami] de fleur fait en papier déchiré d'un livre.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
-";
+---";
             }
         }
 

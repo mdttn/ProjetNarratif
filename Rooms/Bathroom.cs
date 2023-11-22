@@ -18,7 +18,7 @@ Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
-";
+---";
             }
             else
             {
@@ -29,7 +29,7 @@ Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
-";
+---";
             }
         }
 
@@ -50,7 +50,26 @@ Tu as une boîte de [clés].
                     }
                     break;
                 case "m":
-
+                    if (Game.parapluie)
+                    {
+                        Console.WriteLine("Tu te regardes dans le miroir.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("En regardant le miroir, tu t'aperçois qu'une porte de cabine est ouverte et qu'un [parapluie] y est accroché.");
+                    }
+                    break;
+                case "parapluie":
+                    if (!Game.parapluie)
+                    {
+                        Game.parapluie = true;
+                        Game.inventory.Add("parapluie");
+                        Console.WriteLine("Tu as pris le parapluie.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà pris le parapluie.");
+                    }
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");

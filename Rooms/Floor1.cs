@@ -11,7 +11,7 @@ Derrière toi, il y a une [p]orte pour sortir du dortoir.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
-";
+---";
 
         internal override void ReceiveChoice(string choice)
         {

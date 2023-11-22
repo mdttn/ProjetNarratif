@@ -23,12 +23,16 @@ while (!game.IsGameFinished() && !game.IsGameOver())
 
 if (game.IsGameFinished())
 {
+    Console.ForegroundColor = ConsoleColor.DarkCyan;
     Console.WriteLine("\nTHE END");
+    Console.ResetColor();
 }
 
 else if (game.IsGameOver())
 {
+    Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("\nGAME OVER");
+    Console.ResetColor();
 }
 
 Console.ReadKey();

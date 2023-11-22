@@ -11,8 +11,8 @@ namespace ProjetNarratif
         static bool isFinished;
         static bool isOver;
         static string nextRoom = "";
-        internal static int HP = 3;
-        internal static bool brosse, origami, cahier, pinceau;
+        internal static int HP = 5;
+        internal static bool brosse, origami, cahier, pinceau, béret, parapluie, gants, calc, livre, nap;
         internal static List<string> inventory = new List<string>();
         internal static List<string> box = new List<string>();
 
@@ -30,11 +30,15 @@ namespace ProjetNarratif
             HP--;
             if (HP > 1)
             {
-                Console.WriteLine($"Il te reste *{HP}* pts d'énergie.");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"Il te reste {HP} pts d'énergie.");
+                Console.ResetColor();
             }
             else if (HP == 1)
             {
-                Console.WriteLine($"Il te reste *{HP}* pt d'énergie.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Il te reste {HP} pt d'énergie.");
+                Console.ResetColor();
             }
             else
             {

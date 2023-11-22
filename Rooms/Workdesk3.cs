@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjetNarratif.Rooms
 {
-    internal class Library : Room
+    internal class Workdesk3 : Room
     {
         internal override string CreateDescription() =>
-@"Le silence règne dans la bibliothèque.
-Sur le long du mur devant toi, il y a des [t]ables pour travailler.
-À ta droite, il y a le comptoi[r] où tu peux emprunter des ouvrages.
-Au fond de la salle, il y a des [f]auteuils et des [b]ean bags.
-Tu peux revenir dans le [c]orridor.
+@"Tu peux changer de place: [1], [2], [4], [5], [6], ou [p]artir des tables.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
@@ -23,19 +19,29 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "t":
-                    Console.WriteLine("Tu vas vers les espaces de travail.");
-                    Game.Transition<Workdesks>();
+                case "1":
+                    Console.WriteLine("Tu t'asseois à la deuxième table.");
+                    Game.Transition<Workdesk1>();
                     break;
-                case "r":
-                    Console.WriteLine("Tu te rends au comptoir d'emprunt.");
-                    Game.Transition<Counter>();
+                case "2":
+                    Console.WriteLine("Tu t'asseois à la troisième table.");
+                    Game.Transition<Workdesk2>();
                     break;
-                case "f":
-
+                case "4":
+                    Console.WriteLine("Tu t'asseois à la quatrième table.");
+                    Game.Transition<Workdesk4>();
                     break;
-                case "b":
-
+                case "5":
+                    Console.WriteLine("Tu t'asseois à la cinquième table.");
+                    Game.Transition<Workdesk5>();
+                    break;
+                case "6":
+                    Console.WriteLine("Tu t'asseois à la sixième table.");
+                    Game.Transition<Workdesk6>();
+                    break;
+                case "p":
+                    Console.WriteLine("Tu te lèves de la chaise.");
+                    Game.Transition<Library>();
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
@@ -50,10 +56,6 @@ Tu as une boîte de [clés].
                     {
                         Console.WriteLine("- " + key);
                     }
-                    break;
-                case "c":
-                    Console.WriteLine("Tu sors de la bibliothèque.");
-                    Game.Transition<Floor1>();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");
