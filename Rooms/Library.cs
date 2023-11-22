@@ -32,10 +32,23 @@ Tu as une boîte de [clés].
                     Game.Transition<Counter>();
                     break;
                 case "f":
-
+                    Console.WriteLine("Tu vas au fond de la bibliothèque.");
+                    //Game.Transition<Chair>();
                     break;
                 case "b":
-
+                    if (!Game.nap)
+                    {
+                        Game.nap = true;
+                        Game.HP++;
+                        Console.WriteLine("Tu vas au fond de la bibliothèque et tu t'endors sur le bean bag.\n");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Tu as récupéré 1 pt de vie.");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu vas au fond de la bibliothèque et tu te reposes sur le bean bag pendant un moment.");
+                    }
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
