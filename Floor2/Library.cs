@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetNarratif.Floor2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ Tu as une boîte de [clés].
                     break;
                 case "f":
                     Console.WriteLine("Tu vas au fond de la bibliothèque.");
-                    //Game.Transition<Chair>();
+                    Game.Transition<Chair>();
                     break;
                 case "b":
                     if (!Game.nap)

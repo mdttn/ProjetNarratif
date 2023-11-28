@@ -16,7 +16,7 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "8526":
+                case "7413":
                     Console.WriteLine("La porte s'ouvre et tu sors.");
                     Game.Finish();
                     break;

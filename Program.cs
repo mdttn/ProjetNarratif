@@ -1,4 +1,5 @@
 ﻿using ProjetNarratif;
+using ProjetNarratif.Floor1;
 using ProjetNarratif.Rooms;
 
 var game = new Game();
@@ -9,6 +10,7 @@ game.Add(new Room13());
 game.Add(new Room14());
 game.Add(new Bathroom());
 game.Add(new Gym());
+game.Add(new Deadlift());
 game.Add(new Exit());
 game.Add(new Floor2());
 game.Add(new Library());
