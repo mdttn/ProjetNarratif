@@ -38,6 +38,22 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
+                case "béret":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
+                case "parapluie":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
+                case "craie en poudre":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
+                case "calculatrice":
+                    Console.WriteLine("Ce n'est pas le sien...\n");
+                    Game.HPLoss();
+                    break;
                 case "l":
 
                     break;

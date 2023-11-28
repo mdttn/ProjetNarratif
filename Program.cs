@@ -13,6 +13,8 @@ game.Add(new Gym());
 game.Add(new Deadlift());
 game.Add(new Exit());
 game.Add(new Floor2());
+game.Add(new Room21());
+game.Add(new Room22());
 game.Add(new Library());
 game.Add(new Workdesks());
 game.Add(new Workdesk1());

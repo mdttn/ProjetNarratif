@@ -19,11 +19,11 @@ Tu as une boîte de [clés].
             {
                 case "21":
                     Console.WriteLine("Tu entres dans la première chambre.");
-                    //Game.Transition<Room21>();
+                    Game.Transition<Room21>();
                     break;
                 case "22":
                     Console.WriteLine("Tu entres dans la deuxième chambre.");
-                    //Game.Transition<Room22>();
+                    Game.Transition<Room22>();
                     break;
                 case "23":
                     Console.WriteLine("Tu entres dans la troisième chambre.");

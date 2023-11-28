@@ -6,7 +6,7 @@
 @"Tu es au premier étage.
 Devant toi, il y a les chambres [11], [12], [13] et [14].
 À ta droite, il y a un [e]scalier menant au 2e étage.
-À ta gauche, il y a la salle d'entraînement, verrouillée avec un code [????], et une [t]oilette.
+À ta gauche, il y a la salle d'entraînement, dont l'accès requiert un code [????], et une [t]oilette.
 Derrière toi, il y a une [p]orte pour sortir du dortoir.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.

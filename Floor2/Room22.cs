@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetNarratif.Rooms
+﻿namespace ProjetNarratif.Rooms
 {
-    internal class Room14 : Room
+    internal class Room22 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre a les [r]ideaux ouverts.
-Il y a une collection de figurines et de livres sur des étagères.
-Des toiles de paysages naturels sont accrochées sur les murs.
-Igor a perdu un objet qui lui appartient: [...].
+@"La chambre est sombre parce que les rideaux sont fermés.
+Les murs sont partiellement couverts de dessins de nuages et de pluie.
+Il y a des affiches de groupes de musique sur les murs et au-dessus du [b]ureau.
+Claire a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
@@ -23,14 +17,14 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "pinceau":
-                    if (Game.inventory.Contains("pinceau"))
+                case "parapluie":
+                    if (Game.inventory.Contains("parapluie"))
                     {
-                        Game.inventory.Remove("pinceau");
+                        Game.inventory.Remove("parapluie");
                     }
                     Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 6.");
-                    Game.box.Add("chambre 14: #6");
+                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 4.");
+                    Game.box.Add("chambre 22: clé #4");
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
@@ -44,11 +38,11 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "béret":
+                case "pinceau":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "parapluie":
+                case "béret":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -60,12 +54,13 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "r":
-
+                case "b":
+                    Console.WriteLine("Il y a de la crème solaire et d'autres produits pour la peau sensible sur le bureau.");
+                    Console.WriteLine("Il y a également une machine à thé au coin.");
                     break;
                 case "c":
-                    Console.WriteLine("Tu sors de la chambre 14.");
-                    Game.Transition<Floor1>();
+                    Console.WriteLine("Tu sors de la chambre 22.");
+                    Game.Transition<Floor2>();
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");
