@@ -61,10 +61,11 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "f":
-
+                    Console.WriteLine("Il y a des pots de violettes et de fleurs de lys.");
+                    Console.WriteLine("Il y a également une collection de vieux livres.");
                     break;
                 case "b":
-
+                    Console.WriteLine("Un coin du bureau semble être réservé pour des morceaux de papier jauni.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 12.");

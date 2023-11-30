@@ -10,6 +10,8 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription() =>
 @"La chambre est minimaliste et bien organisée, contrairement au [b]ureau.
+Il y a des prix de concours académiques accrochés aux murs.
+Il y a une machine à café sur la table de nuit.
 Hugo a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -59,7 +61,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-
+                    Console.WriteLine("Le bureau est débordé de documents de travail et d'exercices de maths.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 24.");

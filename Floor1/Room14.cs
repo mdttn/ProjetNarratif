@@ -9,9 +9,8 @@ namespace ProjetNarratif.Rooms
     internal class Room14 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre a les [r]ideaux ouverts.
+@"La chambre a les [r]ideaux ouverts et les murs sont décorés.
 Il y a une collection de figurines et de livres sur des étagères.
-Des toiles de paysages naturels sont accrochées sur les murs.
 Igor a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -61,7 +60,8 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "r":
-
+                    Console.WriteLine("Il y a une toile incomplète du paysage que tu vois par la fenêtre.");
+                    Console.WriteLine("Il y a des pots de peinture sur le bord de la fenêtre.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 14.");

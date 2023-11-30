@@ -4,7 +4,7 @@
     {
         internal override string CreateDescription() =>
 @"La chambre est sombre parce que les rideaux sont fermés.
-Les murs sont partiellement couverts de dessins de nuages et de pluie.
+Les murs sont partiellement couverts de dessins de nuages.
 Il y a des affiches de groupes de musique sur les murs et au-dessus du [b]ureau.
 Claire a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.

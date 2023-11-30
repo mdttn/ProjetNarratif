@@ -3,9 +3,9 @@
     internal class Room11 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre est en désordre.
-Les murs sont roses.
-Il y a des toutous sur le lit et du maquillage sur le [b]ureau.
+@"Les murs sont roses.
+La chambre et le [b]ureau sont en désordre.
+Cependant, le [l]it semble être la seule chose qui est propre.
 Hélène a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -54,11 +54,11 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "l":
-
-                    break;
                 case "b":
-
+                    Console.WriteLine("Il y a du maquillage et un miroir au coin du bureau.");
+                    break;
+                case "l":
+                    Console.WriteLine("Le lit est rempli de toutous et a deux gros oreillers confortables.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 11.");

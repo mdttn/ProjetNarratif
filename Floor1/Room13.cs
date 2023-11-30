@@ -11,7 +11,7 @@ namespace ProjetNarratif.Rooms
         internal override string CreateDescription() =>
 @"La chambre a des meubles à étagères remplies de livres.
 Il y a un jeu de fléchettes magnétiques accroché au mur et un échiquier sur une petite table.
-Il y a des lampes sur le [b]ureau et sur la [t]able de nuit.
+Il y a une lampe sur la table de nuit et sur le [b]ureau.
 Alain a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -59,6 +59,9 @@ Tu as une boîte de [clés].
                 case "calculatrice":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
+                    break;
+                case "b":
+                    Console.WriteLine("Il y a juste un étui et une calculatrice sur le bureau.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 13.");

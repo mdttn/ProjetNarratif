@@ -55,7 +55,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-                    Console.WriteLine("Il y a une machine à coudre et des accessoires de mode sur le bureau.");
+                    Console.WriteLine("Il y a une machine à coudre et divers accessoires de mode sur le bureau.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 21.");
