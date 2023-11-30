@@ -6,7 +6,11 @@ namespace ProjetNarratif.Rooms
     {
         static int weight;
 
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.gympass)
+            {
+                return
 @"Devant toi, il y a des machines pour entraîner les jambes.
 À ta gauche, il y a un pèse-personne.
 À ta droite, il y a des machines pour les bras, des [h]altères, des bancs et des tapis.
@@ -16,14 +20,27 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+            else
+            {
+                return
+@"La salle d'entraînement est verrouillée avec un code d'accès: [????].
+Tu peux revenir dans le [c]orridor.
+---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
+                case "8526":
+                    Game.gympass = true;
+                    Console.WriteLine("Tu entres dans la salle d'entraînement.");
+                    break;
                 case "h":
                 label1:
-                    Console.Write("Tu te prends des poids en lbs: ");
+                    Console.Write("Tu te prends des poids (lbs): ");
                     try
                     {
                         weight = Convert.ToInt32(Console.ReadLine());
@@ -40,6 +57,7 @@ Tu as une boîte de [clés].
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tu as récupéré 1 pt de vie.");
                         Console.ResetColor();
+                        Console.WriteLine($"Tu as {Game.HP} pts d'énergie.");
                     }
                     else
                     {

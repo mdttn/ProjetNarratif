@@ -2,7 +2,24 @@
 {
     internal class Room11 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room11)
+            {
+                return
+@"Les murs sont roses.
+La chambre et le [b]ureau sont en désordre.
+Cependant, le [l]it semble être la seule chose qui est propre.
+Hélène a retrouvé sa brosse à cheveux.
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+            else
+            {
+                return
 @"Les murs sont roses.
 La chambre et le [b]ureau sont en désordre.
 Cependant, le [l]it semble être la seule chose qui est propre.
@@ -12,12 +29,15 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "brosse":
+                    Game.room11 = true;
                     if (Game.inventory.Contains("brosse"))
                     {
                         Game.inventory.Remove("brosse");
@@ -30,7 +50,7 @@ Tu as une boîte de [clés].
                         Console.WriteLine("Elle a déjà retrouvé sa brosse à cheveux.");
                     }
                     break;
-                case "origami de fleur":
+                case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;

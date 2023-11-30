@@ -8,21 +8,40 @@ namespace ProjetNarratif.Rooms
 {
     internal class Room24 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room24)
+            {
+                return
 @"La chambre est minimaliste et bien organisée, contrairement au [b]ureau.
 Il y a une machine à café sur la table de nuit.
-Hugo a perdu un objet qui lui appartient: [...].
+Hugo a retrouvé sa calculatrice.
 Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+            else
+            {
+                return
+@"Un sac de boxe est placé près du lit avec des gants de boxe tout près.
+Il y a une tirelire sur le bureau.
+Ben a perdu un objet qui lui appartient: [...].
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "calculatrice":
+                    Game.room24 = true;
                     if (Game.inventory.Contains("calculatrice"))
                     {
                         Game.inventory.Remove("calculatrice");
@@ -39,7 +58,7 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami de fleur":
+                case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;

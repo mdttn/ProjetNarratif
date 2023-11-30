@@ -2,7 +2,23 @@
 {
     internal class Room23 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room23)
+            {
+                return
+@"Un sac de boxe est placé près du lit avec des gants de boxe tout près.
+Il y a une tirelire sur le bureau.
+Ben a retrouvé sa craie en poudre.
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+            else
+            {
+                return
 @"Un sac de boxe est placé près du lit avec des gants de boxe tout près.
 Il y a une tirelire sur le bureau.
 Ben a perdu un objet qui lui appartient: [...].
@@ -11,12 +27,15 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "craie en poudre":
+                    Game.room23 = true;
                     if (Game.inventory.Contains("craie en poudre"))
                     {
                         Game.inventory.Remove("craie en poudre");
@@ -33,7 +52,7 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami de fleur":
+                case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;

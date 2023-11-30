@@ -43,7 +43,7 @@ Tu as une boîte de [clés].
             {
                 case "s":
                 label1:
-                    Console.Write("Tu rajoutes des poids en lbs: ");
+                    Console.Write("Tu rajoutes des poids (lbs): ");
                     try
                     {
                         weight = Convert.ToInt32(Console.ReadLine());
@@ -56,11 +56,12 @@ Tu as une boîte de [clés].
                     {
                         Game.weight = true;
                         Game.HP++;
-                        Console.WriteLine($"Tu prends la barre et tu soulèves {weight} lbs.");
+                        Console.WriteLine($"Tu prends la barre et tu soulèves {weight + 45} lbs.");
                         Console.WriteLine("Tu laisses tomber la barre après quelques secondes.\n"); 
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tu as récupéré 1 pt de vie.");
                         Console.ResetColor();
+                        Console.WriteLine($"Tu as {Game.HP} pts d'énergie.");
                     }
                     else
                     {

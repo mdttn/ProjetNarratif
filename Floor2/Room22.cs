@@ -2,7 +2,23 @@
 {
     internal class Room22 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room22)
+            {
+                return
+@"La chambre est sombre puisque les [r]ideaux sont fermés.
+Des affiches de groupes de musique se trouvent sur les murs et au-dessus du [b]ureau.
+Claire a retrouvé son parapluie.
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+            else
+            {
+                return
 @"La chambre est sombre puisque les [r]ideaux sont fermés.
 Des affiches de groupes de musique se trouvent sur les murs et au-dessus du [b]ureau.
 Claire a perdu un objet qui lui appartient: [...].
@@ -11,12 +27,15 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "parapluie":
+                    Game.room22 = true;
                     if (Game.inventory.Contains("parapluie"))
                     {
                         Game.inventory.Remove("parapluie");
@@ -33,7 +52,7 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami de fleur":
+                case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -58,7 +77,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "r":
-                    Console.WriteLine("Tu regardes à travers les rideaux et le soleil brille particulièrement fort.");
+                    Console.WriteLine("Tu tires les rideaux et le soleil brille particulièrement fort.");
                     break;
                 case "b":
                     Console.WriteLine("Il y a de la crème solaire sur le bureau.");

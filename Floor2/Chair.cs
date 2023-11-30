@@ -25,7 +25,7 @@ Tu as une boîte de [clés].
             {
                 return
 @"Tu t'asseois sur un des fauteuils.
-Tu vois un [origami de fleur] fait en vieux papier jauni déchiré au sol.
+Tu vois un [origami] de fleur fait en vieux papier jauni déchiré au sol.
 Tu peux te [l]ever du fauteuil.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
@@ -38,16 +38,16 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "origami de fleur":
+                case "origami":
                     if (!Game.origami)
                     {
                         Game.origami = true;
-                        Game.inventory.Add("origami de fleur");
-                        Console.WriteLine("Tu as ramassé l'origami de fleur.");
+                        Game.inventory.Add("origami");
+                        Console.WriteLine("Tu as ramassé l'origami.");
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà ramassé l'origami de fleur.");
+                        Console.WriteLine("Tu as déjà ramassé l'origami.");
                     }
                     break;
                 case "l":

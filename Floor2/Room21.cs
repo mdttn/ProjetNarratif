@@ -2,7 +2,24 @@
 {
     internal class Room21 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room21)
+            {
+                return
+@"La chambre est en désordre.
+La garde-robe est remplie de vêtements.
+Il y a un mannequin au coin de la chambre et à côté du [b]ureau.
+Diana a retrouvé son béret.
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+            else
+            {
+                return
 @"La chambre est en désordre.
 La garde-robe est remplie de vêtements.
 Il y a un mannequin au coin de la chambre et à côté du [b]ureau.
@@ -12,12 +29,15 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "béret":
+                    Game.room21 = true;
                     if (Game.inventory.Contains("béret"))
                     {
                         Game.inventory.Remove("béret");
@@ -34,7 +54,7 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami de fleur":
+                case "origami":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -59,7 +79,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-                    Console.WriteLine("Il y a une machine à coudre et divers accessoires de mode sur le bureau.");
+                    Console.WriteLine("Il y a une machine à coudre et un miroir sur le bureau.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 21.");

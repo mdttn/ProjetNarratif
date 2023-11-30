@@ -8,7 +8,24 @@ namespace ProjetNarratif.Rooms
 {
     internal class Room12 : Room
     {
-        internal override string CreateDescription() =>
+        internal override string CreateDescription()
+        {
+            if (Game.room12)
+            {
+                return
+@"La chambre est bien rangée et propre.
+Il y a des plantes situées près de la [f]enêtre et des murs.
+Il y a des cahiers et des manuels sur le [b]ureau.
+Annie a retrouvé son origami de fleur.
+Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
+---";
+            }
+            else
+            {
+                return
 @"La chambre est bien rangée et propre.
 Il y a des plantes situées près de la [f]enêtre et des murs.
 Il y a des cahiers et des manuels sur le [b]ureau.
@@ -18,15 +35,18 @@ Tu peux revenir dans le [c]orridor.
 Tu as une [liste] d'objets perdus que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
+            }
+        }
 
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
-                case "origami de fleur":
-                    if (Game.inventory.Contains("origami de fleur"))
+                case "origami":
+                    Game.room12 = true;
+                    if (Game.inventory.Contains("origami"))
                     {
-                        Game.inventory.Remove("origami de fleur");
+                        Game.inventory.Remove("origami");
                         Console.WriteLine("Tu l'as retrouvé!");
                         Console.WriteLine("Tu trouves une clé numérotée du chiffre 5.");
                         Game.box.Add("chambre 12: #5");

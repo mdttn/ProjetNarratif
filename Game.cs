@@ -11,8 +11,10 @@ namespace ProjetNarratif
         static bool isFinished;
         static bool isOver;
         static string nextRoom = "";
-        internal static int HP = 3;
-        internal static bool brosse, origami, cahier, pinceau, béret, parapluie, chalk, calc, livre, nap, weight;
+        internal static int HP = 2;
+        internal static bool brosse, origami, cahier, pinceau, béret, parapluie, chalk, calc;
+        internal static bool livre, nap, weight, gympass;
+        internal static bool room11, room12, room13, room14, room21, room22, room23, room24;
         internal static List<string> inventory = new List<string>();
         internal static List<string> box = new List<string>();
 
