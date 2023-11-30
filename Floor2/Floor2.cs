@@ -3,7 +3,7 @@
     internal class Floor2 : Room
     {
         internal override string CreateDescription() =>
-@"Tu es au premier étage.
+@"Tu es au deuxième étage.
 Devant toi, il y a les chambres [21], [22], [23] et [24].
 À ta droite, il y a un [e]scalier menant au 1er étage.
 À ta gauche, il y a la [b]ibliothèque et une toilette.
@@ -32,6 +32,18 @@ Tu as une boîte de [clés].
                 case "24":
                     Console.WriteLine("Tu entres dans la quatrième chambre.");
                     //Game.Transition<Room24>();
+                    break;
+                case "pinceau":
+                    if (!Game.pinceau)
+                    {
+                        Game.pinceau = true;
+                        Game.inventory.Add("pinceau");
+                        Console.WriteLine("Tu as ramassé le pinceau.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu as déjà ramassé le pinceau.");
+                    }
                     break;
                 case "e":
                     Console.WriteLine("Tu descends des marches.");
