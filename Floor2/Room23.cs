@@ -3,9 +3,8 @@
     internal class Room23 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre est en désordre.
-Un sac de boxe est placé près du lit avec des gants de boxe tout près.
-Il y a des haltères et une tirelire sur le bureau.
+@"Un sac de boxe est placé près du lit avec des gants de boxe tout près.
+Il y a une tirelire sur le bureau.
 Ben a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -21,16 +20,20 @@ Tu as une boîte de [clés].
                     if (Game.inventory.Contains("craie en poudre"))
                     {
                         Game.inventory.Remove("craie en poudre");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 1.");
+                        Game.box.Add("chambre 23: #1");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 1.");
-                    Game.box.Add("chambre 23: clé #1");
+                    else
+                    {
+                        Console.WriteLine("Il a déjà retrouvé son contenant de craie en poudre.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami":
+                case "origami de fleur":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;

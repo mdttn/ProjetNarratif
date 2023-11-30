@@ -53,7 +53,7 @@ Tu as une boîte de [clés].
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la bibliothèque.");
-                    Game.Transition<Floor1>();
+                    Game.Transition<Floor2>();
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets perdus:");

@@ -41,7 +41,7 @@ while (!game.IsGameFinished() && !game.IsGameOver())
 
 if (game.IsGameFinished())
 {
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
+    Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("\nTHE END");
     Console.ResetColor();
 }

@@ -27,16 +27,20 @@ Tu as une boîte de [clés].
                     if (Game.inventory.Contains("cahier"))
                     {
                         Game.inventory.Remove("cahier");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 2.");
+                        Game.box.Add("chambre 13: #2");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 2.");
-                    Game.box.Add("chambre 13: #2");
+                    else
+                    {
+                        Console.WriteLine("Il a déjà retrouvé son cahier.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami":
+                case "origami de fleur":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -61,14 +65,13 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-                    Console.WriteLine("Il y a juste un étui et une calculatrice sur le bureau.");
+                    Console.WriteLine("Il y a un étui et une calculatrice sur le bureau.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 13.");
                     Game.Transition<Floor1>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
                     Console.WriteLine("Liste d'objets perdus:");
                     foreach (var item in Game.inventory)
                     {

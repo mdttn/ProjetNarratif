@@ -26,16 +26,20 @@ Tu as une boîte de [clés].
                     if (Game.inventory.Contains("pinceau"))
                     {
                         Game.inventory.Remove("pinceau");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 6.");
+                        Game.box.Add("chambre 14: #6");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 6.");
-                    Game.box.Add("chambre 14: #6");
+                    else
+                    {
+                        Console.WriteLine("Il a déjà retrouvé son pinceau.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami":
+                case "origami de fleur":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;

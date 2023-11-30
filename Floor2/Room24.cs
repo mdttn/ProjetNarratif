@@ -10,7 +10,6 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription() =>
 @"La chambre est minimaliste et bien organisée, contrairement au [b]ureau.
-Il y a des prix de concours académiques accrochés aux murs.
 Il y a une machine à café sur la table de nuit.
 Hugo a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
@@ -27,16 +26,20 @@ Tu as une boîte de [clés].
                     if (Game.inventory.Contains("calculatrice"))
                     {
                         Game.inventory.Remove("calculatrice");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 3.");
+                        Game.box.Add("chambre 24: #3");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 3.");
-                    Game.box.Add("chambre 24: #3");
+                    else
+                    {
+                        Console.WriteLine("Il a déjà retrouvé sa calculatrice.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami":
+                case "origami de fleur":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -61,7 +64,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-                    Console.WriteLine("Le bureau est débordé de documents de travail et d'exercices de maths.");
+                    Console.WriteLine("Le bureau est débordé de documents de travail.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 24.");

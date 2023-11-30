@@ -3,9 +3,8 @@
     internal class Room22 : Room
     {
         internal override string CreateDescription() =>
-@"La chambre est sombre parce que les rideaux sont fermés.
-Les murs sont partiellement couverts de dessins de nuages.
-Il y a des affiches de groupes de musique sur les murs et au-dessus du [b]ureau.
+@"La chambre est sombre puisque les [r]ideaux sont fermés.
+Des affiches de groupes de musique se trouvent sur les murs et au-dessus du [b]ureau.
 Claire a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
@@ -21,16 +20,20 @@ Tu as une boîte de [clés].
                     if (Game.inventory.Contains("parapluie"))
                     {
                         Game.inventory.Remove("parapluie");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 4.");
+                        Game.box.Add("chambre 22: #4");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 4.");
-                    Game.box.Add("chambre 22: clé #4");
+                    else
+                    {
+                        Console.WriteLine("Elle a déjà retrouvé son parapluie.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
-                case "origami":
+                case "origami de fleur":
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
@@ -54,8 +57,11 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Ce n'est pas le sien...\n");
                     Game.HPLoss();
                     break;
+                case "r":
+                    Console.WriteLine("Tu regardes à travers les rideaux et le soleil brille particulièrement fort.");
+                    break;
                 case "b":
-                    Console.WriteLine("Il y a de la crème solaire et d'autres produits pour la peau sensible sur le bureau.");
+                    Console.WriteLine("Il y a de la crème solaire sur le bureau.");
                     Console.WriteLine("Il y a également une machine à thé au coin.");
                     break;
                 case "c":

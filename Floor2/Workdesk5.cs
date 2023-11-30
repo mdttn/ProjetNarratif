@@ -59,12 +59,12 @@ Tu as une boîte de [clés].
                     if (!Game.béret)
                     {
                         Game.béret = true;
-                        Game.inventory.Add("bérêt");
-                        Console.WriteLine("Tu as pris le bérêt.");
+                        Game.inventory.Add("béret");
+                        Console.WriteLine("Tu as pris le béret.");
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris le bérêt.");
+                        Console.WriteLine("Tu as déjà pris le béret.");
                     }
                     break;
                 case "p":

@@ -23,14 +23,18 @@ Tu as une boîte de [clés].
         {
             switch (choice)
             {
-                case "origami":
+                case "origami de fleur":
                     if (Game.inventory.Contains("origami de fleur"))
                     {
                         Game.inventory.Remove("origami de fleur");
+                        Console.WriteLine("Tu l'as retrouvé!");
+                        Console.WriteLine("Tu trouves une clé numérotée du chiffre 5.");
+                        Game.box.Add("chambre 12: #5");
                     }
-                    Console.WriteLine("Tu l'as retrouvé!");
-                    Console.WriteLine("Tu trouves une clé numérotée du chiffre 5.");
-                    Game.box.Add("chambre 12: #5");
+                    else
+                    {
+                        Console.WriteLine("Elle a déjà retrouvé son origami de fleur.");
+                    }
                     break;
                 case "brosse":
                     Console.WriteLine("Ce n'est pas le sien...\n");
