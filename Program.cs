@@ -1,5 +1,6 @@
 ﻿using ProjetNarratif;
 using ProjetNarratif.Floor1;
+using ProjetNarratif.Floor2;
 using ProjetNarratif.Rooms;
 
 var game = new Game();
@@ -25,6 +26,7 @@ game.Add(new Workdesk3());
 game.Add(new Workdesk4());
 game.Add(new Workdesk5());
 game.Add(new Workdesk6());
+game.Add(new Chair());
 game.Add(new Counter());
 
 
