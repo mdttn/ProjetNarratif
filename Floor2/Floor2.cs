@@ -27,11 +27,11 @@ Tu as une boîte de [clés].
                     break;
                 case "23":
                     Console.WriteLine("Tu entres dans la troisième chambre.");
-                    //Game.Transition<Room23>();
+                    Game.Transition<Room23>();
                     break;
                 case "24":
                     Console.WriteLine("Tu entres dans la quatrième chambre.");
-                    //Game.Transition<Room24>();
+                    Game.Transition<Room24>();
                     break;
                 case "pinceau":
                     if (!Game.pinceau)
