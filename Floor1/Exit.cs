@@ -5,7 +5,7 @@
         internal static bool isKeyCollected;
 
         internal override string CreateDescription() =>
-@"La porte est verrouillée avec un code: [????].
+@"La porte blanche est verrouillée avec un code: [????].
 Tu peux te [r]etourner.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
@@ -33,7 +33,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }

@@ -16,7 +16,8 @@ namespace ProjetNarratif
         internal static bool livre, nap, weight, gympass;
         internal static bool room11, room12, room13, room14, room21, room22, room23, room24;
         internal static List<string> inventory = new List<string>();
-        internal static List<string> box = new List<string>();
+        internal static List<string> box1 = new List<string>();
+        internal static List<string> box2 = new List<string>();
 
         internal void Add(Room room)
         {

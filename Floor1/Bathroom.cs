@@ -56,7 +56,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("En regardant le miroir, tu t'aperçois qu'une porte de cabine est ouverte et qu'un [parapluie] y est accroché.");
+                        Console.WriteLine("En te regardant dans le miroir, tu t'aperçois qu'un [parapluie] est accroché à une porte de cabine ouverte.");
                     }
                     break;
                 case "parapluie":
@@ -84,7 +84,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }

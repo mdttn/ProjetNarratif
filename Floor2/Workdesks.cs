@@ -30,11 +30,11 @@ Tu as une boîte de [clés].
                     break;
                 case "3":
                     Console.WriteLine("Tu t'asseois à la troisième table.");
-                    //Game.Transition<Workdesk1>();
+                    Game.Transition<Workdesk3>();
                     break;
                 case "4":
                     Console.WriteLine("Tu t'asseois à la quatrième table.");
-                    //Game.Transition<Workdesk1>();
+                    Game.Transition<Workdesk4>();
                     break;
                 case "5":
                     Console.WriteLine("Tu t'asseois à la cinquième table.");
@@ -56,7 +56,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }

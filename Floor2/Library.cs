@@ -45,6 +45,7 @@ Tu as une boîte de [clés].
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tu as récupéré 1 pt de vie.");
                         Console.ResetColor();
+                        Console.WriteLine($"Tu as {Game.HP} pts d'énergie.");
                     }
                     else
                     {
@@ -64,7 +65,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }

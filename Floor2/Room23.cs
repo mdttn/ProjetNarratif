@@ -41,7 +41,7 @@ Tu as une boîte de [clés].
                         Game.inventory.Remove("craie en poudre");
                         Console.WriteLine("Tu l'as retrouvé!");
                         Console.WriteLine("Tu trouves une clé numérotée du chiffre 1.");
-                        Game.box.Add("chambre 23: #1");
+                        Game.box2.Add("chambre 23: #1");
                     }
                     else
                     {
@@ -89,7 +89,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }

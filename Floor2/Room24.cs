@@ -14,6 +14,7 @@ namespace ProjetNarratif.Rooms
             {
                 return
 @"La chambre est minimaliste et bien organisée, contrairement au [b]ureau.
+Des prix de concours académiques sont accrochés aux murs.
 Il y a une machine à café sur la table de nuit.
 Hugo a retrouvé sa calculatrice.
 Tu peux revenir dans le [c]orridor.
@@ -25,9 +26,10 @@ Tu as une boîte de [clés].
             else
             {
                 return
-@"Un sac de boxe est placé près du lit avec des gants de boxe tout près.
-Il y a une tirelire sur le bureau.
-Ben a perdu un objet qui lui appartient: [...].
+@"La chambre est minimaliste et bien organisée, contrairement au [b]ureau.
+Des prix de concours académiques sont accrochés aux murs.
+Il y a une machine à café sur la table de nuit.
+Hugo a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
 Tu as une [liste] d'objets perdus que tu as ramassés.
@@ -47,7 +49,7 @@ Tu as une boîte de [clés].
                         Game.inventory.Remove("calculatrice");
                         Console.WriteLine("Tu l'as retrouvé!");
                         Console.WriteLine("Tu trouves une clé numérotée du chiffre 3.");
-                        Game.box.Add("chambre 24: #3");
+                        Game.box2.Add("chambre 24: #3");
                     }
                     else
                     {
@@ -83,7 +85,7 @@ Tu as une boîte de [clés].
                     Game.HPLoss();
                     break;
                 case "b":
-                    Console.WriteLine("Le bureau est débordé de documents de travail.");
+                    Console.WriteLine("Le bureau est débordé de documents de travail en plus d'un cahier de chimie.");
                     break;
                 case "c":
                     Console.WriteLine("Tu sors de la chambre 24.");
@@ -98,7 +100,13 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
-                    foreach (var key in Game.box)
+                    foreach (var key in Game.box1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("- " + key);
+                        Console.ResetColor();
+                    }
+                    foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);
                     }
