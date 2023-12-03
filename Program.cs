@@ -56,7 +56,7 @@ else if (game.IsGameOver())
 else if (game.HasQuit())
 {
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine("EXIT");
+    Console.WriteLine("\nEXIT");
     Console.ResetColor();
 }
 

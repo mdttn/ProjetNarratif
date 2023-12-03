@@ -13,7 +13,7 @@ Il y a un mannequin au coin de la chambre et à côté du [b]ureau.
 Diana a retrouvé son béret.
 Tu peux revenir dans le [c]orridor.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -26,7 +26,7 @@ Il y a un mannequin au coin de la chambre et à côté du [b]ureau.
 Diana a perdu un objet qui lui appartient: [...].
 Tu peux revenir dans le [c]orridor.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -86,7 +86,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Floor2>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

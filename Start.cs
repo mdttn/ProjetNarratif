@@ -11,25 +11,20 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription()
         {
-            string title, menu;
             Console.Clear();
-            title =
+            return
 @"
 ███████ ███████  ██████  █████  ██████  ███████     ██████   ██████  ██████  ███    ███     zZZ
 ██      ██      ██      ██zzz██ ██zzz██ ██          ██   ██ ██    ██ ██zzz██ ████  ████   zZZ
 █████   ███████ ██      ███████ ██████  █████       ██   ██ ██    ██ ██████  ██ ████ ██ zZZ
 ██           ██ ██      ██   ██ ██      ██          ██   ██ ██    ██ ██   ██ ██  ██  ██ 
 ███████ ███████  ██████ ██   ██ ██      ███████     ██████   ██████  ██   ██ ██      ██ 
-";
 
-            menu =
-@"
 *TEMPS LIMITE: 20 min*
 
 [1] Commencer
 [2] Quitter
 ---";
-            return title + menu;
         }
 
         internal override void ReceiveChoice(string choice)
@@ -40,6 +35,7 @@ namespace ProjetNarratif.Rooms
                     Game.Transition<Floor1>();
                     break;
                 case "2":
+                    Console.WriteLine("Clique 2 fois pour quitter.");
                     Game.Quit();
                     break;
                 default:

@@ -16,7 +16,7 @@ namespace ProjetNarratif.Rooms
 @"Tu es devant le [m]iroir.
 Tu peux revenir dans le [c]orridor.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -27,7 +27,7 @@ Tu as une boîte de [clés].
 Tu vois une [brosse] à cheveux à côté d'un lavabot.
 Tu peux revenir dans le [c]orridor.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -46,7 +46,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris la brosse à cheveux.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "m":
@@ -68,7 +68,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris le parapluie.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "c":
@@ -76,7 +76,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Floor1>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

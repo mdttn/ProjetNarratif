@@ -9,7 +9,7 @@ Devant toi, il y a les chambres [21], [22], [23] et [24].
 À ta gauche, il y a la [b]ibliothèque et une toilette.
 Derrière toi, il y a des fenêtres.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
 
@@ -42,7 +42,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà ramassé le pinceau.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "e":
@@ -54,7 +54,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Library>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

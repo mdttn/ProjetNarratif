@@ -15,7 +15,7 @@ namespace ProjetNarratif.Rooms
                 return
 @"Tu peux changer de place: [1], [3], [4], [5], [6], ou [p]artir des tables.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -25,7 +25,7 @@ Tu as une boîte de [clés].
 @"Tu trouves un [cahier] d'exercices sur la table.
 Tu peux changer de place: [1], [3], [4], [5], [6], ou [p]artir des tables.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -64,7 +64,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris le cahier.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "p":
@@ -72,7 +72,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Library>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

@@ -9,7 +9,7 @@ Devant toi, il y a les chambres [11], [12], [13] et [14].
 À ta gauche, il y a la [s]alle d'entraînement et une [t]oilette.
 Derrière toi, il y a une [p]orte pour sortir du dortoir.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
 
@@ -57,7 +57,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Exit>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

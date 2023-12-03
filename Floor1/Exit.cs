@@ -8,7 +8,7 @@
 @"La porte blanche est verrouillée avec un code: [????].
 Tu peux te [r]etourner.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
 
@@ -25,7 +25,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Floor1>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

@@ -12,7 +12,7 @@ namespace ProjetNarratif.Rooms
 @"Il y a 6 tables disponibles, placées l'une en face de l'autre en ilots de 2: [1], [2], [3], [4], [5], [6].
 Tu peux revenir à l'entrée de la [b]ibliothèque.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
 
@@ -48,7 +48,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Library>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

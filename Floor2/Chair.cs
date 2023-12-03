@@ -17,7 +17,7 @@ namespace ProjetNarratif.Floor2
 @"Tu t'asseois sur un des fauteuils.
 Tu peux te [l]ever du fauteuil.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -28,7 +28,7 @@ Tu as une boîte de [clés].
 Tu vois un [origami] de fleur fait en vieux papier jauni déchiré au sol.
 Tu peux te [l]ever du fauteuil.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -47,7 +47,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà ramassé l'origami.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "l":
@@ -55,7 +55,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Library>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

@@ -16,22 +16,23 @@ namespace ProjetNarratif.Floor1
             if (Game.chalk)
             {
                 return
-@"Sur le côté, il y a des plaques pour rajouter du poids à la barre.
+@"Sur le côté, il y a des plaques pour ajouter du poids à la barre.
 Tu t'apprêtes à faire un [s]oulevé de terre.
 Tu peux [r]evenir et aller vers d'autres machines.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
             else
             {
                 return
-@"Sur le côté, il y a des plaques pour rajouter du poids à la barre.
-Tu t'apprêtes à faire un [s]oulevé de terre quand tu remarques qu'il y a de la [craie en poudre] à côté de la barre.
+@"Sur le côté, il y a des plaques pour ajouter du poids à la barre.
+Tu remarques alors qu'il y a de la [craie en poudre] à côté de la barre.
+Tu t'apprêtes à faire un [s]oulevé de terre.
 Tu peux [r]evenir et aller vers d'autres machines.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
             }
@@ -69,7 +70,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine($"Tu prends la barre et tu soulèves {weight} lbs.");
+                        Console.WriteLine($"Tu prends la barre et tu soulèves {weight + 45} lbs.");
                         Console.WriteLine("Tu laisses tomber la barre après quelques secondes.");
                     }
                     break;
@@ -82,7 +83,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris la craie en poudre.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "r":
@@ -90,7 +91,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Gym>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

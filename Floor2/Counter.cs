@@ -12,7 +12,7 @@ namespace ProjetNarratif.Rooms
 @"Scanne le type d'ouvrage que tu veux emprunter: [...].
 Tu peux [r]evenir.
 
-Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une [liste] d'objets que tu as ramassés.
 Tu as une boîte de [clés].
 ---";
 
@@ -21,9 +21,9 @@ Tu as une boîte de [clés].
             switch (choice)
             {
                 case "livre":
-                    if (Game.inventory.Contains("livre (à emprunter)"))
+                    if (Game.inventory.Contains("livre"))
                     {
-                        Game.inventory.Remove("livre (à emprunter)");
+                        Game.inventory.Remove("livre");
                     }
                     if (Game.calc)
                     {
@@ -44,7 +44,7 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Tu as déjà pris la calculatrice.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "cahier":
@@ -55,7 +55,7 @@ Tu as une boîte de [clés].
                     Game.Transition<Library>();
                     break;
                 case "liste":
-                    Console.WriteLine("Liste d'objets perdus:");
+                    Console.WriteLine("Liste d'objets:");
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
