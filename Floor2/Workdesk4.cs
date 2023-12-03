@@ -20,15 +20,15 @@ Tu as une boîte de [clés].
             switch (choice)
             {
                 case "1":
-                    Console.WriteLine("Tu t'asseois à la deuxième table.");
+                    Console.WriteLine("Tu t'asseois à la première table.");
                     Game.Transition<Workdesk1>();
                     break;
                 case "2":
-                    Console.WriteLine("Tu t'asseois à la troisième table.");
+                    Console.WriteLine("Tu t'asseois à la deuxième table.");
                     Game.Transition<Workdesk2>();
                     break;
                 case "3":
-                    Console.WriteLine("Tu t'asseois à la quatrième table.");
+                    Console.WriteLine("Tu t'asseois à la troisième table.");
                     Game.Transition<Workdesk3>();
                     break;
                 case "5":
