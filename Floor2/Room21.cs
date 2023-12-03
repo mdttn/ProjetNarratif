@@ -37,9 +37,9 @@ Tu as une boîte de [clés].
             switch (choice)
             {
                 case "béret":
-                    Game.room21 = true;
                     if (Game.inventory.Contains("béret"))
                     {
+                        Game.room21 = true;
                         Game.inventory.Remove("béret");
                         Console.WriteLine("Tu l'as retrouvé!");
                         Console.WriteLine("Tu trouves une clé numérotée du chiffre 7.");
@@ -47,36 +47,134 @@ Tu as une boîte de [clés].
                     }
                     else
                     {
-                        Console.WriteLine("Elle a déjà retrouvé son béret.");
+                        Console.WriteLine("Commande invalide.");
                     }
                     break;
                 case "brosse":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("brosse"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "origami":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("origami"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "cahier":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("cahier"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "pinceau":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("pinceau"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "parapluie":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("parapluie"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "craie en poudre":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("craie en poudre"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "calculatrice":
-                    Console.WriteLine("Ce n'est pas le sien...\n");
-                    Game.HPLoss();
+                    if (!Game.room21)
+                    {
+                        if (Game.inventory.Contains("calculatrice"))
+                        {
+                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Game.HPLoss();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Commande invalide.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "b":
                     Console.WriteLine("Il y a une machine à coudre et un miroir sur le bureau.");
