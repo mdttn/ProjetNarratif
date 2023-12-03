@@ -47,6 +47,10 @@ Tu as une boîte de [clés].
                     try
                     {
                         weight = Convert.ToInt32(Console.ReadLine());
+                        if (weight <= 0 || weight > 450)
+                        {
+                            goto label1;
+                        }
                     }
                     catch (Exception)
                     {

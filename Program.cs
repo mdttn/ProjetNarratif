@@ -4,6 +4,7 @@ using ProjetNarratif.Floor2;
 using ProjetNarratif.Rooms;
 
 var game = new Game();
+game.Add(new Start());
 game.Add(new Floor1());
 game.Add(new Room11());
 game.Add(new Room12());
@@ -29,8 +30,7 @@ game.Add(new Workdesk6());
 game.Add(new Chair());
 game.Add(new Counter());
 
-
-while (!game.IsGameFinished() && !game.IsGameOver())
+while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
 {
     Console.WriteLine("---");
     Console.WriteLine(game.CurrentRoomDescription);
@@ -50,6 +50,13 @@ else if (game.IsGameOver())
 {
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("\nGAME OVER");
+    Console.ResetColor();
+}
+
+else if (game.HasQuit())
+{
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("EXIT");
     Console.ResetColor();
 }
 

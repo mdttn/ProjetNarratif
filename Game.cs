@@ -1,4 +1,5 @@
 ﻿using ProjetNarratif.Rooms;
+using System.Diagnostics;
 
 namespace ProjetNarratif
 {
@@ -8,25 +9,18 @@ namespace ProjetNarratif
         Room currentRoom;
         internal bool IsGameFinished() => isFinished;
         internal bool IsGameOver() => isOver;
+        internal bool HasQuit() => hasQuit;
         static bool isFinished;
         static bool isOver;
+        static bool hasQuit;
         static string nextRoom = "";
-        internal static int HP = 2;
+        internal static int HP = 1;
         internal static bool brosse, origami, cahier, pinceau, béret, parapluie, chalk, calc;
         internal static bool livre, nap, weight, gympass;
         internal static bool room11, room12, room13, room14, room21, room22, room23, room24;
         internal static List<string> inventory = new List<string>();
         internal static List<string> box1 = new List<string>();
         internal static List<string> box2 = new List<string>();
-
-        internal void Add(Room room)
-        {
-            rooms.Add(room);
-            if (currentRoom == null)
-            {
-                currentRoom = room;
-            }
-        }
 
         internal static void HPLoss()
         {
@@ -47,6 +41,15 @@ namespace ProjetNarratif
             {
                 Console.WriteLine("Tu es trop fatigué.e pour continuer à chercher des objets perdus.");
                 GameOver();
+            }
+        }
+
+        internal void Add(Room room)
+        {
+            rooms.Add(room);
+            if (currentRoom == null)
+            {
+                currentRoom = room;
             }
         }
 
@@ -71,6 +74,11 @@ namespace ProjetNarratif
         internal static void Finish()
         {
             isFinished = true;
+        }
+
+        internal static void Quit()
+        {
+            hasQuit = true;
         }
 
         internal void CheckTransition()

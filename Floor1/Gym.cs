@@ -26,6 +26,9 @@ Tu as une boîte de [clés].
                 return
 @"La salle d'entraînement est verrouillée avec un code d'accès: [????].
 Tu peux revenir dans le [c]orridor.
+
+Tu as une [liste] d'objets perdus que tu as ramassés.
+Tu as une boîte de [clés].
 ---";
             }
         }
@@ -35,8 +38,15 @@ Tu peux revenir dans le [c]orridor.
             switch (choice)
             {
                 case "8526":
-                    Game.gympass = true;
-                    Console.WriteLine("Tu entres dans la salle d'entraînement.");
+                    if (!Game.gympass)
+                    {
+                        Game.gympass = true;
+                        Console.WriteLine("Tu entres dans la salle d'entraînement.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "h":
                 label1:
@@ -44,6 +54,10 @@ Tu peux revenir dans le [c]orridor.
                     try
                     {
                         weight = Convert.ToInt32(Console.ReadLine());
+                        if (weight <= 0 || weight > 85)
+                        {
+                            goto label1;
+                        }
                     }
                     catch (Exception)
                     {
