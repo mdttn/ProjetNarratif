@@ -20,7 +20,7 @@ namespace ProjetNarratif.Rooms
 ██           ██ ██      ██   ██ ██      ██          ██   ██ ██    ██ ██   ██ ██  ██  ██ 
 ███████ ███████  ██████ ██   ██ ██      ███████     ██████   ██████  ██   ██ ██      ██ 
 
-*TEMPS LIMITE: 20 min*
+> TEMPS LIMITE: 15-20 min <
 
 [1] Commencer
 [2] Quitter
@@ -32,6 +32,7 @@ namespace ProjetNarratif.Rooms
             switch (choice)
             {
                 case "1":
+                    Game.start = true;
                     Game.Transition<Floor1>();
                     break;
                 case "2":

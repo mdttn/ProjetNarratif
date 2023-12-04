@@ -32,31 +32,72 @@ game.Add(new Counter());
 
 while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
 {
-    Console.WriteLine("---");
-    Console.WriteLine(game.CurrentRoomDescription);
-    string? choice = Console.ReadLine()?.ToLower() ?? "";
-    Console.Clear();
-    game.ReceiveChoice(choice);
+    if (Game.start)
+    {
+        Game.timer.Start();
+    }
+    if (Game.timer.Elapsed.Minutes < 15)
+    {
+        Console.WriteLine("---");
+        Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
+        Console.WriteLine("---");
+        Console.WriteLine(game.CurrentRoomDescription);
+        string? choice = Console.ReadLine()?.ToLower() ?? "";
+        Console.Clear();
+        game.ReceiveChoice(choice);
+    }
+    else if (Game.timer.Elapsed.Minutes >= 15)
+    {
+        if (!Game.firststop)
+        {
+            Game.firststop = true;
+            Game.HPLoss();
+            if (Game.HP >= 1)
+            {
+                Console.WriteLine("---");
+                Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
+                Console.WriteLine("---");
+                Console.WriteLine(game.CurrentRoomDescription);
+                string? choice = Console.ReadLine()?.ToLower() ?? "";
+                Console.Clear();
+                game.ReceiveChoice(choice);
+            }
+        }
+        else
+        {
+            if (Game.timer.Elapsed.Minutes >= 20)
+            {
+                Game.GameOver();
+            }
+        }
+    }
 }
 
 if (game.IsGameFinished())
 {
+    Console.WriteLine("---");
+    Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
+    Console.WriteLine("---");
     Console.ForegroundColor = ConsoleColor.Cyan;
-    Console.WriteLine("\nTHE END");
+    Console.WriteLine("THE END");
     Console.ResetColor();
 }
 
 else if (game.IsGameOver())
 {
+    Console.WriteLine("---");
+    Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
+    Console.WriteLine("---");
     Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("\nGAME OVER");
+    Console.WriteLine("GAME OVER");
     Console.ResetColor();
 }
 
 else if (game.HasQuit())
 {
+    Console.WriteLine("---");
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine("\nEXIT");
+    Console.WriteLine("EXIT");
     Console.ResetColor();
 }
 

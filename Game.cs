@@ -1,8 +1,6 @@
 ﻿using ProjetNarratif.Rooms;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
-using System.Timers;
-using Timer = System.Timers.Timer;
 
 namespace ProjetNarratif
 {
@@ -24,6 +22,8 @@ namespace ProjetNarratif
         internal static List<string> inventory = new List<string>();
         internal static List<string> box1 = new List<string>();
         internal static List<string> box2 = new List<string>();
+        internal static Stopwatch timer = new Stopwatch();
+        internal static bool start, firststop;
 
         internal static void HPLoss()
         {
