@@ -31,18 +31,18 @@ namespace ProjetNarratif
             if (HP > 1)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"Il te reste {HP} pts d'énergie.");
+                Console.WriteLine($"\nIl te reste {HP} pts d'énergie.");
                 Console.ResetColor();
             }
             else if (HP == 1)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Il te reste {HP} pt d'énergie.");
+                Console.WriteLine($"\nIl te reste {HP} pt d'énergie.");
                 Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("Tu es trop fatigué.e pour continuer à chercher des objets perdus.");
+                Console.WriteLine("\nTu es trop fatigué.e pour continuer à chercher des objets perdus.");
                 GameOver();
             }
         }

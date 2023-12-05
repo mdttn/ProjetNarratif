@@ -20,7 +20,7 @@ namespace ProjetNarratif.Rooms
 ██           ██ ██      ██   ██ ██      ██          ██   ██ ██    ██ ██   ██ ██  ██  ██ 
 ███████ ███████  ██████ ██   ██ ██      ███████     ██████   ██████  ██   ██ ██      ██ 
 
-> TEMPS LIMITE: 15-20 min <
+> TEMPS LIMITE: 20-25 min <
 
 [1] Commencer
 [2] Quitter

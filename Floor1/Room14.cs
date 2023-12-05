@@ -59,7 +59,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("brosse"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -77,7 +77,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("origami"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -95,7 +95,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("cahier"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -113,7 +113,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("béret"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -131,7 +131,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("parapluie"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -149,7 +149,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("craie en poudre"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
@@ -167,7 +167,7 @@ Tu as une boîte de [clés].
                     {
                         if (Game.inventory.Contains("calculatrice"))
                         {
-                            Console.WriteLine("Ce n'est pas le sien...\n");
+                            Console.WriteLine("Ce n'est pas le sien...");
                             Game.HPLoss();
                         }
                         else
