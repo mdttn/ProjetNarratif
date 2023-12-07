@@ -14,6 +14,7 @@ game.Add(new Bathroom());
 game.Add(new Gym());
 game.Add(new Deadlift());
 game.Add(new Exit());
+game.Add(new Riddle());
 game.Add(new Floor2());
 game.Add(new Room21());
 game.Add(new Room22());
