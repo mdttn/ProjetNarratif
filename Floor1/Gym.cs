@@ -97,7 +97,9 @@ Tu as une boîte de [clés].
                     Console.WriteLine("Boîte de clés:");
                     foreach (var key in Game.box1)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("- " + key);
+                        Console.ResetColor();
                     }
                     foreach (var key in Game.box2)
                     {
