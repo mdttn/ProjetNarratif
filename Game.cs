@@ -15,7 +15,7 @@ namespace ProjetNarratif
         static bool isOver;
         static bool hasQuit;
         static string nextRoom = "";
-        internal static int HP = 1;
+        internal static int HP = 2;
         internal static bool brosse, origami, cahier, pinceau, béret, parapluie, chalk, calc;
         internal static bool livre, nap, weight, gympass;
         internal static bool room11, room12, room13, room14, room21, room22, room23, room24;
@@ -24,33 +24,6 @@ namespace ProjetNarratif
         internal static List<string> box2 = new List<string>();
         internal static Stopwatch timer = new Stopwatch();
         internal static bool start, firststop;
-        internal static int essai = 3;
-        internal static bool solved;
-
-        internal static void Riddle()
-        {
-            essai--;
-            if (essai == 2)
-            {
-                Console.WriteLine("Je te donne un indice:\nC'est un élève situé au premier étage. (1-4)");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"\nIl te reste {essai} essais.");
-                Console.ResetColor();
-            }
-            else if (essai == 1)
-            {
-                Console.WriteLine("Je te donne un indice:\nC'est un garçon.");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nIl te reste {essai} essai.");
-                Console.ResetColor();
-            }
-            else
-            {
-                Console.WriteLine("Tant pis...");
-                Console.WriteLine("\nTu es trop fatigué.e pour continuer à chercher des objets perdus.");
-                GameOver();
-            }
-        }
 
         internal static void HPLoss()
         {

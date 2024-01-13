@@ -14,7 +14,6 @@ game.Add(new Bathroom());
 game.Add(new Gym());
 game.Add(new Deadlift());
 game.Add(new Exit());
-game.Add(new Riddle());
 game.Add(new Floor2());
 game.Add(new Room21());
 game.Add(new Room22());
@@ -37,7 +36,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
     {
         Game.timer.Start();
     }
-    if (Game.timer.Elapsed.Minutes < 20)
+    if (Game.timer.Elapsed.Minutes < 25)
     {
         Console.WriteLine("---");
         Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
@@ -47,7 +46,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
         Console.Clear();
         game.ReceiveChoice(choice);
     }
-    else if (Game.timer.Elapsed.Minutes >= 20)
+    else if (Game.timer.Elapsed.Minutes >= 25)
     {
         if (!Game.firststop)
         {
@@ -66,7 +65,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
         }
         else
         {
-            if (Game.timer.Elapsed.Minutes >= 25)
+            if (Game.timer.Elapsed.Minutes >= 30)
             {
                 Game.GameOver();
             }
