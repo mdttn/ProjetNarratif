@@ -21,6 +21,7 @@ namespace ProjetNarratif.Rooms
 ███████ ███████  ██████ ██   ██ ██      ███████     ██████   ██████  ██   ██ ██      ██ 
 
 > TEMPS LIMITE: 25-30 min <
+> INSTRUCTIONS: Pour choisir une action/option, tapez ce qui est entre crochets + le bouton ENTER. <
 
 [1] Commencer
 [2] Quitter
