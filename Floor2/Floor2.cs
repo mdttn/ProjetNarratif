@@ -55,6 +55,7 @@ Tu as une boîte de [clés].
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets:");
+                    Game.inventory.Sort();
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);

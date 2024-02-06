@@ -36,7 +36,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
     {
         Game.timer.Start();
     }
-    if (Game.timer.Elapsed.Minutes < 25)
+    if (Game.timer.Elapsed.Minutes < 20)
     {
         Console.WriteLine("---");
         Console.WriteLine("Temps écoulé: " + Game.timer.Elapsed.Minutes + " min");
@@ -46,7 +46,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
         Console.Clear();
         game.ReceiveChoice(choice);
     }
-    else if (Game.timer.Elapsed.Minutes >= 25)
+    else if (Game.timer.Elapsed.Minutes >= 20)
     {
         if (!Game.firststop)
         {
@@ -65,7 +65,7 @@ while (!game.IsGameFinished() && !game.IsGameOver() && !game.HasQuit())
         }
         else
         {
-            if (Game.timer.Elapsed.Minutes >= 30)
+            if (Game.timer.Elapsed.Minutes >= 25)
             {
                 Game.GameOver();
             }

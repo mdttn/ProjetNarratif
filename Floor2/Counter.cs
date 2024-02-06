@@ -56,6 +56,7 @@ Tu as une boîte de [clés].
                     break;
                 case "liste":
                     Console.WriteLine("Liste d'objets:");
+                    Game.inventory.Sort();
                     foreach (var item in Game.inventory)
                     {
                         Console.WriteLine("- " + item);
@@ -63,12 +64,14 @@ Tu as une boîte de [clés].
                     break;
                 case "clés":
                     Console.WriteLine("Boîte de clés:");
+                    Game.box1.Sort();
                     foreach (var key in Game.box1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("- " + key);
                         Console.ResetColor();
                     }
+                    Game.box2.Sort();
                     foreach (var key in Game.box2)
                     {
                         Console.WriteLine("- " + key);

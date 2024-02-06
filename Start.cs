@@ -13,15 +13,16 @@ namespace ProjetNarratif.Rooms
         {
             Console.Clear();
             return
-@"
+@"                                                                                              zZZ
 ███████ ███████  ██████  █████  ██████  ███████     ██████   ██████  ██████  ███    ███     zZZ
 ██      ██      ██      ██zzz██ ██zzz██ ██          ██   ██ ██    ██ ██zzz██ ████  ████   zZZ
 █████   ███████ ██      ███████ ██████  █████       ██   ██ ██    ██ ██████  ██ ████ ██ zZZ
 ██           ██ ██      ██   ██ ██      ██          ██   ██ ██    ██ ██   ██ ██  ██  ██ 
 ███████ ███████  ██████ ██   ██ ██      ███████     ██████   ██████  ██   ██ ██      ██ 
 
-> TEMPS LIMITE: 25-30 min <
-> INSTRUCTIONS: Pour choisir une action/option, tapez ce qui est entre crochets + le bouton ENTER. <
+> TEMPS LIMITE: 20-25 min <
+> INSTRUCTIONS: Pour choisir une option, tapez ce qui est entre crochets + ENTER. <
+* FAIRE ATTENTION AU TEXTE *
 
 [1] Commencer
 [2] Quitter
