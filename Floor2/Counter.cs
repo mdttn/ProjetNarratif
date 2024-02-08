@@ -48,7 +48,14 @@ Tu as une boîte de [clés].
                     }
                     break;
                 case "cahier":
-                    Console.WriteLine("Le cahier n'appartient pas à la bibliothèque.");
+                    if (Game.inventory.Contains("cahier"))
+                    {
+                        Console.WriteLine("Le cahier n'appartient pas à la bibliothèque.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Commande invalide.");
+                    }
                     break;
                 case "r":
                     Console.WriteLine("Tu libères le comptoir.");
