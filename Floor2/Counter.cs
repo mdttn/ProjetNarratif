@@ -21,9 +21,9 @@ Tu as une boîte de [clés].
             switch (choice)
             {
                 case "livre":
-                    if (Game.inventory.Contains("livre"))
+                    if (Game.inventory.Contains("livre (à emprunter)"))
                     {
-                        Game.inventory.Remove("livre");
+                        Game.inventory.Remove("livre (à emprunter)");
                     }
                     if (Game.calc)
                     {

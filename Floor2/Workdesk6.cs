@@ -59,7 +59,7 @@ Tu as une boîte de [clés].
                     if (!Game.livre)
                     {
                         Game.livre = true;
-                        Game.inventory.Add("livre");
+                        Game.inventory.Add("livre (à emprunter)");
                         Console.WriteLine("Tu feuillettes le livre et tu décides de l'emprunter.");
                     }
                     else
