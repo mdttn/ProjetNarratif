@@ -1,9 +1,8 @@
 # ProjetNarratif
-420J17AS
 
 Thérèse Than Nguyen
 
-Le joueur cherche et redonne des objets perdus aux résidents (élèves) du dortoir selon la description de leurs
+Le joueur doit chercher et redonner des objets perdus aux résidents du dortoir selon la description de leurs
 chambres qui les représentent respectivement afin de sortir du dortoir.
 
-(escape room avec temps limite et pts de vie)
+(style "escape room" avec temps limite et points de vie)
