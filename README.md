@@ -6,3 +6,5 @@ Le joueur doit chercher et redonner des objets perdus aux résidents du dortoir 
 chambres qui les représentent respectivement afin de sortir du dortoir.
 
 (style "escape room" avec temps limite et points de vie)
+
+Vidéo demo: https://youtu.be/HahpPJvlGp4
